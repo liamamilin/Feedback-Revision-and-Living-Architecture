@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Chapter 3 — When the Map Fails – Feedback, Revision, and Living Architecture</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch04-failure-signals.html" rel="next">
+<link href="./ch02-reality-feedback.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch01-from-map-to-use.html">Part I — Structure Meets Reality</a></li><li class="breadcrumb-item"><a href="./ch03-when-the-map-fails.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Feedback, Revision, and Living Architecture</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Structures Remain Open, Adaptive, and Real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — Structure Meets Reality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch01-from-map-to-use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — From Map to Use</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch02-reality-feedback.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2 — Reality Feedback</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch03-when-the-map-fails.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Failure, Drift, and Revision Signals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch04-failure-signals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4 — Failure Signals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch05-concept-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 5 — Concept Drift</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch06-structure-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 6 — Structure Drift</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Updating Models and Boundaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch07-model-update.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Chapter 7 — Model Update</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch08-boundary-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Chapter 8 — Boundary Revision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch09-category-and-layer-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Chapter 9 — Category and Layer Revision</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV — Iteration and Versioning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10-iteration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Chapter 10 — Iteration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch11-versioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11 — Versioning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch12-migration-between-versions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V — Anti-Dogmatism</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch13-map-is-not-reality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13 — Map Is Not Reality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch14-structure-as-hypothesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Chapter 14 — Structure as Hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch15-avoiding-structural-tyranny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chapter 15 — Avoiding Structural Tyranny</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI — Living Architecture</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch16-living-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16 — Living Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch17-long-term-refinement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch18-living-architecture-loop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-silence-before-the-crack" id="toc-the-silence-before-the-crack" class="nav-link active" data-scroll-target="#the-silence-before-the-crack"><span class="header-section-number">5.1</span> The Silence Before the Crack</a></li>
+  <li><a href="#the-moment-of-recognition" id="toc-the-moment-of-recognition" class="nav-link" data-scroll-target="#the-moment-of-recognition"><span class="header-section-number">5.2</span> The Moment of Recognition</a></li>
+  <li><a href="#categories-of-failure" id="toc-categories-of-failure" class="nav-link" data-scroll-target="#categories-of-failure"><span class="header-section-number">5.3</span> Categories of Failure</a>
+  <ul class="collapse">
+  <li><a href="#misfit" id="toc-misfit" class="nav-link" data-scroll-target="#misfit"><span class="header-section-number">5.3.1</span> Misfit</a></li>
+  <li><a href="#incompleteness" id="toc-incompleteness" class="nav-link" data-scroll-target="#incompleteness"><span class="header-section-number">5.3.2</span> Incompleteness</a></li>
+  <li><a href="#distortion" id="toc-distortion" class="nav-link" data-scroll-target="#distortion"><span class="header-section-number">5.3.3</span> Distortion</a></li>
+  <li><a href="#obsolescence" id="toc-obsolescence" class="nav-link" data-scroll-target="#obsolescence"><span class="header-section-number">5.3.4</span> Obsolescence</a></li>
+  </ul></li>
+  <li><a href="#case-studies-in-framework-failure" id="toc-case-studies-in-framework-failure" class="nav-link" data-scroll-target="#case-studies-in-framework-failure"><span class="header-section-number">5.4</span> Case Studies in Framework Failure</a>
+  <ul class="collapse">
+  <li><a href="#the-failure-of-the-soviet-economic-planning-model" id="toc-the-failure-of-the-soviet-economic-planning-model" class="nav-link" data-scroll-target="#the-failure-of-the-soviet-economic-planning-model"><span class="header-section-number">5.4.1</span> The Failure of the Soviet Economic Planning Model</a></li>
+  <li><a href="#the-collapse-of-long-term-capital-management" id="toc-the-collapse-of-long-term-capital-management" class="nav-link" data-scroll-target="#the-collapse-of-long-term-capital-management"><span class="header-section-number">5.4.2</span> The Collapse of Long-Term Capital Management</a></li>
+  </ul></li>
+  <li><a href="#the-psychology-of-framework-attachment" id="toc-the-psychology-of-framework-attachment" class="nav-link" data-scroll-target="#the-psychology-of-framework-attachment"><span class="header-section-number">5.5</span> The Psychology of Framework Attachment</a></li>
+  <li><a href="#recognizing-failure-early" id="toc-recognizing-failure-early" class="nav-link" data-scroll-target="#recognizing-failure-early"><span class="header-section-number">5.6</span> Recognizing Failure Early</a></li>
+  <li><a href="#beyond-failure" id="toc-beyond-failure" class="nav-link" data-scroll-target="#beyond-failure"><span class="header-section-number">5.7</span> Beyond Failure</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">5.8</span> Key Takeaways</a></li>
+  <li><a href="#exercises-and-reflections" id="toc-exercises-and-reflections" class="nav-link" data-scroll-target="#exercises-and-reflections"><span class="header-section-number">5.9</span> Exercises and Reflections</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch01-from-map-to-use.html">Part I — Structure Meets Reality</a></li><li class="breadcrumb-item"><a href="./ch03-when-the-map-fails.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>“It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.”</em> — Often attributed to Charles Darwin (though the exact phrasing is disputed)</p>
+<p><em>“The test of a first-rate intelligence is the ability to hold two opposed ideas in the mind at the same time, and still retain the ability to function.”</em> — F. Scott Fitzgerald, <em>The Crack-Up</em> (1936)</p>
+</blockquote>
+<section id="the-silence-before-the-crack" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="the-silence-before-the-crack"><span class="header-section-number">5.1</span> The Silence Before the Crack</h2>
+<p>Structures do not usually fail with dramatic crashes. They fail more quietly — through a gradual accumulation of exceptions, a growing sense of unease, a slow erosion of explanatory power. The moment when we finally acknowledge that a framework no longer serves its purpose is often preceded by a long period during which its limitations were visible but unacknowledged.</p>
+<p>This chapter examines how structures reveal their limits, the different ways in which frameworks fail, the psychological resistance that prevents us from recognizing failure, and the practices that can help us see the cracks before they become chasms.</p>
+</section>
+<section id="the-moment-of-recognition" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="the-moment-of-recognition"><span class="header-section-number">5.2</span> The Moment of Recognition</h2>
+<p>There is a characteristic experience that accompanies the recognition that a framework is failing. It is not the sudden flash of insight that popular accounts of scientific revolutions describe but something more subtle: a quiet shift in the quality of attention. Where once the framework provided clarity, now it creates confusion. Where once it illuminated, now it obscures. Where once it seemed to organize experience naturally, now it requires effort to maintain.</p>
+<p>Thomas Kuhn, in his landmark study of scientific revolutions, described this experience as the emergence of “anomaly” — the recognition that something does not fit within the existing paradigm <span class="citation" data-cites="kuhn62">(<a href="references.html#ref-kuhn62" role="doc-biblioref"><strong>kuhn62?</strong></a>)</span>. An anomaly is not merely an unsolved problem; it is a problem that the framework’s own resources cannot adequately address. An unsolved problem may yield to further effort; an anomaly suggests that the framework’s fundamental assumptions are inadequate.</p>
+<p>The recognition of anomaly often begins in the peripheral vision of practitioners. It is felt before it is articulated — a sense that the framework is not working as it should, that the categories are not fitting, that the explanations are becoming strained. This inchoate sense of misfit is valuable precisely because it precedes explicit analysis. It is the signal that something is wrong before we have identified what.</p>
+</section>
+<section id="categories-of-failure" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="categories-of-failure"><span class="header-section-number">5.3</span> Categories of Failure</h2>
+<p>Structures fail in characteristic ways. Understanding these patterns of failure helps us recognize them earlier and respond more effectively.</p>
+<section id="misfit" class="level3" data-number="5.3.1">
+<h3 data-number="5.3.1" class="anchored" data-anchor-id="misfit"><span class="header-section-number">5.3.1</span> Misfit</h3>
+<p>The most fundamental form of failure is misfit: the structure does not match the territory. This can occur because the structure was designed for a different domain, because the domain has changed, or because the original analysis that produced the structure was flawed.</p>
+<p>A classic example is the use of traditional hierarchical organizational structures for knowledge work. The military command-and-control model, with its clear chain of command, standardized procedures, and top-down decision-making, was designed for environments where tasks are predictable, information flows upward, and orders flow downward. When applied to software development, creative design, or scientific research — domains characterized by uncertainty, creativity, and expertise distributed across the organization — the hierarchical model produces misfit. Decisions are slow, innovation is stifled, and the people with the most relevant knowledge have the least authority to act.</p>
+<p>Misfit is often invisible to those within the structure because they have learned to work around it. The informal organization — the network of relationships and practices that operate outside the formal structure — compensates for the misfit. But the energy spent on working around the structure is energy not spent on the primary task.</p>
+</section>
+<section id="incompleteness" class="level3" data-number="5.3.2">
+<h3 data-number="5.3.2" class="anchored" data-anchor-id="incompleteness"><span class="header-section-number">5.3.2</span> Incompleteness</h3>
+<p>A structure may fail not because it is wrong but because it is incomplete — because there are important aspects of the territory that it does not cover. Incompleteness is a particular challenge for frameworks that present themselves as comprehensive, because their claim to completeness makes it difficult to acknowledge what they omit.</p>
+<p>The history of software architecture is replete with methodologies that claimed to cover the entire software development lifecycle, only to be supplemented by additional practices that addressed their blind spots. The Waterfall model, for example, provided a complete description of software development as a sequence of phases: requirements, design, implementation, testing, deployment. What it omitted was the reality that requirements change, that design decisions are revisited, and that learning occurs throughout the process. The Agile movement did not contradict the Waterfall model so much as point out its incompleteness — the aspects of software development that the model did not capture.</p>
+<p>Incompleteness is particularly dangerous when the omitted aspects are the ones that matter most. A framework for evaluating investment opportunities that accounts for financial returns but not for systemic risk is incomplete in a way that makes it actively dangerous. A model of organizational performance that measures efficiency but not adaptability will optimize for the wrong things.</p>
+</section>
+<section id="distortion" class="level3" data-number="5.3.3">
+<h3 data-number="5.3.3" class="anchored" data-anchor-id="distortion"><span class="header-section-number">5.3.3</span> Distortion</h3>
+<p>Sometimes a structure does not merely omit aspects of reality but actively distorts them. Distortion occurs when the framework’s categories force phenomena into shapes that do not fit, when its assumptions misrepresent the nature of the domain, or when its metrics create perverse incentives.</p>
+<p>The phenomenon known as Goodhart’s Law — “When a measure becomes a target, it ceases to be a good measure” — illustrates one form of distortion <span class="citation" data-cites="goodhart75">(<a href="references.html#ref-goodhart75" role="doc-biblioref"><strong>goodhart75?</strong></a>)</span>. A framework that uses a metric to evaluate performance will cause people to optimize for that metric, often at the expense of the underlying goal that the metric was intended to represent. This is not a failure of the people but of the framework: it has distorted the behavior it was meant to measure.</p>
+<p>Distortion can also occur at the conceptual level. A framework that classifies phenomena into discrete categories may distort our understanding of phenomena that are continuous. A framework that assumes independence between variables may distort our understanding of systems where variables are deeply interconnected. The distortion is not in the data but in the lens through which the data is viewed.</p>
+</section>
+<section id="obsolescence" class="level3" data-number="5.3.4">
+<h3 data-number="5.3.4" class="anchored" data-anchor-id="obsolescence"><span class="header-section-number">5.3.4</span> Obsolescence</h3>
+<p>Even structures that fit their territory perfectly may eventually fail because the territory changes. Obsolescence is the fate of all frameworks that are static in a dynamic world.</p>
+<p>The shelf life of frameworks varies enormously. Some, like the principles of Euclidean geometry, remain useful for millennia within their domain of applicability. Others, like specific software design patterns, may become obsolete within a decade as technology evolves. The rate of obsolescence is determined not by the quality of the framework but by the rate of change in the domain it describes.</p>
+<p>Obsolescence is particularly difficult to recognize because it is gradual. A framework that was perfectly adequate yesterday may be slightly less adequate today, and slightly less adequate tomorrow, without any single moment of failure that forces recognition. The structure does not break; it merely becomes less relevant. As the management theorist Russell Ackoff observed, “We fail more often because we solve the wrong problem than because we get the wrong solution to the right problem” <span class="citation" data-cites="ackoff74">(<a href="references.html#ref-ackoff74" role="doc-biblioref"><strong>ackoff74?</strong></a>)</span>. An obsolete framework is one that was designed for a problem that no longer exists.</p>
+</section>
+</section>
+<section id="case-studies-in-framework-failure" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="case-studies-in-framework-failure"><span class="header-section-number">5.4</span> Case Studies in Framework Failure</h2>
+<section id="the-failure-of-the-soviet-economic-planning-model" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="the-failure-of-the-soviet-economic-planning-model"><span class="header-section-number">5.4.1</span> The Failure of the Soviet Economic Planning Model</h3>
+<p>Perhaps the most consequential framework failure of the twentieth century was the Soviet system of central economic planning. The framework was elegant in theory: a central planning authority would collect data on resources, production capacities, and consumer needs, then calculate optimal production targets and allocate resources accordingly. The structure was comprehensive, internally consistent, and motivated by noble ideals.</p>
+<p>In practice, the framework failed catastrophically. The information required for rational planning was impossible to collect — the sheer volume of data, the complexity of interconnections between industries, and the inability to account for local knowledge made central planning infeasible <span class="citation" data-cites="hayek45">(<a href="references.html#ref-hayek45" role="doc-biblioref"><strong>hayek45?</strong></a>)</span>. Moreover, the incentives created by the planning system led to systematic distortions: factory managers met production targets by producing goods of low quality, by reporting inflated output, and by hoarding resources against future targets. The framework did not merely fail to achieve its goals; it actively prevented the emergence of alternative coordination mechanisms.</p>
+<p>The Soviet planning model failed through all four categories: misfit (a centralized model for a distributed problem), incompleteness (no mechanism for incorporating local knowledge), distortion (perverse incentives), and obsolescence (failure to adapt to changing economic conditions). Yet the framework persisted for decades, maintained by ideological commitment rather than practical effectiveness.</p>
+</section>
+<section id="the-collapse-of-long-term-capital-management" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="the-collapse-of-long-term-capital-management"><span class="header-section-number">5.4.2</span> The Collapse of Long-Term Capital Management</h3>
+<p>In 1998, the hedge fund Long-Term Capital Management (LTCM) collapsed, losing $4.6 billion in less than four months. The fund was founded by Nobel laureates and leading financial theorists, and its trading strategies were based on sophisticated mathematical models of financial markets. The models indicated that the fund’s positions were hedged against risk; the probability of a catastrophic loss, according to the models, was effectively zero.</p>
+<p>The models failed because they were built on assumptions that did not hold in a crisis: that markets are efficient, that price movements follow normal distributions, and that correlations between assets remain stable. When the Russian government defaulted on its debt in August 1998, these assumptions broke simultaneously. Correlations that the models assumed were stable became chaotic; hedges that were supposed to protect the fund became additional sources of loss. The models did not merely fail to predict the crisis; they actively concealed the risk that the fund was running <span class="citation" data-cites="lowenstein00">(<a href="references.html#ref-lowenstein00" role="doc-biblioref"><strong>lowenstein00?</strong></a>)</span>.</p>
+<p>LTCM illustrates a particularly dangerous form of framework failure: the structure that creates confidence where confidence is unwarranted. The models were not wrong in a simple sense; they were wrong in a way that made their users overconfident in their predictions and blind to their limitations.</p>
+</section>
+</section>
+<section id="the-psychology-of-framework-attachment" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="the-psychology-of-framework-attachment"><span class="header-section-number">5.5</span> The Psychology of Framework Attachment</h2>
+<p>Understanding why frameworks fail is only half the challenge. The other half is understanding why we so often fail to recognize failure when it occurs. The psychology of framework attachment reveals powerful forces that resist acknowledging that a structure is no longer adequate.</p>
+<p><strong>Identity Investment.</strong> When we have built a framework — or identified with one created by others — it becomes part of our identity. Acknowledging that the framework is failing feels like acknowledging a personal failure. This investment makes it difficult to see the evidence objectively.</p>
+<p><strong>Sunk Cost.</strong> The time, energy, and resources that have been invested in a framework create a powerful incentive to continue using it. The sunk cost fallacy — the tendency to continue investing in something because of past investment rather than future prospects — is particularly strong when the investment has been substantial and public.</p>
+<p><strong>Cognitive Dissonance.</strong> When evidence contradicts a cherished framework, the mind experiences cognitive dissonance — an uncomfortable tension between belief and evidence. The natural response is to resolve the dissonance by discounting the evidence rather than revising the belief. This is not irrationality but a deeply ingrained cognitive pattern.</p>
+<p><strong>Social Consensus.</strong> When a framework is widely adopted within a community, the social pressure to maintain it can be overwhelming. To question the framework is to risk exclusion, ridicule, or professional marginalization. The history of science shows that paradigm shifts are often resisted by the established scientific community for precisely this reason <span class="citation" data-cites="kuhn62">(<a href="references.html#ref-kuhn62" role="doc-biblioref"><strong>kuhn62?</strong></a>)</span>.</p>
+<p><strong>Anxiety about Alternatives.</strong> Finally, there is the fear that abandoning a flawed framework will leave us without any framework at all. The prospect of operating without a structure — of facing the complexity of reality without the simplifying lens of a model — is genuinely anxiety-provoking. This anxiety can cause us to cling to inadequate frameworks rather than face the uncertainty of the void.</p>
+</section>
+<section id="recognizing-failure-early" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="recognizing-failure-early"><span class="header-section-number">5.6</span> Recognizing Failure Early</h2>
+<p>If the psychological barriers to recognizing framework failure are powerful, the practices that can overcome them must be equally robust. Here are approaches that can help us see the cracks before they become chasms.</p>
+<p><strong>Establish Explicit Falsification Criteria.</strong> Before committing to a framework, specify the conditions under which you would consider it to have failed. What evidence would convince you that the framework is no longer adequate? What would constitute a decisive anomaly? By establishing these criteria in advance, you create a mechanism for objective evaluation that can override psychological resistance.</p>
+<p><strong>Conduct Regular Framework Audits.</strong> Set aside time at regular intervals to evaluate the frameworks you use. Ask: What has changed in the domain since this framework was adopted? What evidence has accumulated that challenges its assumptions? Where do we feel resistance or strain in applying it? Where do we find ourselves making exceptions or workarounds?</p>
+<p><strong>Create a Culture of Constructive Dissent.</strong> The most valuable feedback about framework limitations often comes from those who are skeptical of it. Create space for dissent to be expressed without penalty. Encourage people to articulate what the framework misses, where it distorts, and how it could be improved.</p>
+<p><strong>Track Anomalies Systematically.</strong> Maintain a log of anomalies — cases that the framework does not handle well, predictions that were incorrect, outcomes that were unexpected. Review this log periodically to identify patterns. A single anomaly may be noise; a pattern of anomalies is a signal.</p>
+<p><strong>Practice Intellectual Flexibility.</strong> Cultivate the ability to hold multiple frameworks lightly. The goal is not to find the perfect framework but to maintain a toolkit of useful approximations, each with known limitations. When one framework begins to fail, you can reach for another without the trauma of abandonment.</p>
+</section>
+<section id="beyond-failure" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="beyond-failure"><span class="header-section-number">5.7</span> Beyond Failure</h2>
+<p>The failure of a framework is not the end of learning. It is, in many ways, the beginning. A framework that has been tested against reality and found wanting has taught us something precious: it has revealed the precise contours of its own limitations. It has shown us where the map does not match the territory, and in doing so, it has given us the information we need to draw a better map.</p>
+<p>The living architecture is not one that never fails but one that fails productively — that learns from failure, that incorporates the lessons of failure into revised structures, and that remains open to the possibility of failure as an essential part of its ongoing adaptation to reality.</p>
+</section>
+<section id="key-takeaways" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">5.8</span> Key Takeaways</h2>
+<ul>
+<li>Structures fail in characteristic patterns: misfit (wrong for the domain), incompleteness (missing important aspects), distortion (misrepresenting reality), and obsolescence (outdated for a changed world).</li>
+<li>Framework failure is often gradual and accompanied by psychological resistance — identity investment, sunk costs, cognitive dissonance, social consensus, and anxiety about alternatives.</li>
+<li>The most dangerous framework failures are those that create unwarranted confidence, concealing risk rather than revealing it.</li>
+<li>Recognizing failure early requires explicit falsification criteria, regular audits, constructive dissent, systematic anomaly tracking, and intellectual flexibility.</li>
+<li>Productive failure — failure that teaches us something about our structures’ limitations — is essential to the development of living architecture.</li>
+</ul>
+</section>
+<section id="exercises-and-reflections" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="exercises-and-reflections"><span class="header-section-number">5.9</span> Exercises and Reflections</h2>
+<ol type="1">
+<li><p><strong>Conduct a “framework audit” of a structure you currently rely on.</strong> Identify how it might fail: Where does it misfit your domain? What does it leave out? Where might it distort? Is it becoming obsolete? What evidence would convince you that it is time to revise or replace it?</p></li>
+<li><p><strong>Consider a framework failure you have experienced or observed.</strong> It could be a methodology that did not deliver, a model that was wrong, or an architecture that broke under pressure. Analyze the failure using the four categories above. What type(s) of failure occurred? What were the early warning signs? What psychological resistance delayed recognition of the failure? What was learned from the experience?</p></li>
+<li><p><strong>Practice intellectual flexibility.</strong> Identify three frameworks or models that address a similar domain (e.g., three project management methodologies, three theories of learning, three software architecture patterns). For each, articulate both its strengths and its known limitations. Under what conditions would you switch from one to another? What would be the signal?</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch02-reality-feedback.html" class="pagination-link" aria-label="Chapter 2 — Reality Feedback">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2 — Reality Feedback</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch04-failure-signals.html" class="pagination-link" aria-label="Chapter 4 — Failure Signals">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4 — Failure Signals</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

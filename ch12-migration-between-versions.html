@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Chapter 12 — Migration Between Versions – Feedback, Revision, and Living Architecture</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch13-map-is-not-reality.html" rel="next">
+<link href="./ch11-versioning.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10-iteration.html">Part IV — Iteration and Versioning</a></li><li class="breadcrumb-item"><a href="./ch12-migration-between-versions.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Feedback, Revision, and Living Architecture</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Structures Remain Open, Adaptive, and Real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — Structure Meets Reality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch01-from-map-to-use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — From Map to Use</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch02-reality-feedback.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2 — Reality Feedback</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch03-when-the-map-fails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Failure, Drift, and Revision Signals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch04-failure-signals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4 — Failure Signals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch05-concept-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 5 — Concept Drift</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch06-structure-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 6 — Structure Drift</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Updating Models and Boundaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch07-model-update.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Chapter 7 — Model Update</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch08-boundary-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Chapter 8 — Boundary Revision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch09-category-and-layer-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Chapter 9 — Category and Layer Revision</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV — Iteration and Versioning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10-iteration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Chapter 10 — Iteration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch11-versioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11 — Versioning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch12-migration-between-versions.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V — Anti-Dogmatism</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch13-map-is-not-reality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13 — Map Is Not Reality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch14-structure-as-hypothesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Chapter 14 — Structure as Hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch15-avoiding-structural-tyranny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chapter 15 — Avoiding Structural Tyranny</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI — Living Architecture</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch16-living-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16 — Living Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch17-long-term-refinement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch18-living-architecture-loop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-bridge-between-versions" id="toc-the-bridge-between-versions" class="nav-link active" data-scroll-target="#the-bridge-between-versions"><span class="header-section-number">14.1</span> The Bridge Between Versions</a></li>
+  <li><a href="#the-challenge-of-transition" id="toc-the-challenge-of-transition" class="nav-link" data-scroll-target="#the-challenge-of-transition"><span class="header-section-number">14.2</span> The Challenge of Transition</a>
+  <ul class="collapse">
+  <li><a href="#the-cost-of-not-migrating" id="toc-the-cost-of-not-migrating" class="nav-link" data-scroll-target="#the-cost-of-not-migrating"><span class="header-section-number">14.2.1</span> The Cost of Not Migrating</a></li>
+  </ul></li>
+  <li><a href="#backward-compatibility-when-to-maintain-when-to-break" id="toc-backward-compatibility-when-to-maintain-when-to-break" class="nav-link" data-scroll-target="#backward-compatibility-when-to-maintain-when-to-break"><span class="header-section-number">14.3</span> Backward Compatibility: When to Maintain, When to Break</a>
+  <ul class="collapse">
+  <li><a href="#the-case-for-maintaining-backward-compatibility" id="toc-the-case-for-maintaining-backward-compatibility" class="nav-link" data-scroll-target="#the-case-for-maintaining-backward-compatibility"><span class="header-section-number">14.3.1</span> The Case for Maintaining Backward Compatibility</a></li>
+  <li><a href="#the-case-for-breaking-compatibility" id="toc-the-case-for-breaking-compatibility" class="nav-link" data-scroll-target="#the-case-for-breaking-compatibility"><span class="header-section-number">14.3.2</span> The Case for Breaking Compatibility</a></li>
+  <li><a href="#deprecation-as-a-middle-path" id="toc-deprecation-as-a-middle-path" class="nav-link" data-scroll-target="#deprecation-as-a-middle-path"><span class="header-section-number">14.3.3</span> Deprecation as a Middle Path</a></li>
+  </ul></li>
+  <li><a href="#migration-strategies" id="toc-migration-strategies" class="nav-link" data-scroll-target="#migration-strategies"><span class="header-section-number">14.4</span> Migration Strategies</a>
+  <ul class="collapse">
+  <li><a href="#gradual-migration" id="toc-gradual-migration" class="nav-link" data-scroll-target="#gradual-migration"><span class="header-section-number">14.4.1</span> Gradual Migration</a></li>
+  <li><a href="#big-bang-migration" id="toc-big-bang-migration" class="nav-link" data-scroll-target="#big-bang-migration"><span class="header-section-number">14.4.2</span> Big Bang Migration</a></li>
+  <li><a href="#parallel-run" id="toc-parallel-run" class="nav-link" data-scroll-target="#parallel-run"><span class="header-section-number">14.4.3</span> Parallel Run</a></li>
+  <li><a href="#bridge-structures" id="toc-bridge-structures" class="nav-link" data-scroll-target="#bridge-structures"><span class="header-section-number">14.4.4</span> Bridge Structures</a></li>
+  </ul></li>
+  <li><a href="#communication-and-training-during-migration" id="toc-communication-and-training-during-migration" class="nav-link" data-scroll-target="#communication-and-training-during-migration"><span class="header-section-number">14.5</span> Communication and Training During Migration</a>
+  <ul class="collapse">
+  <li><a href="#the-emotional-dimension-of-structural-change" id="toc-the-emotional-dimension-of-structural-change" class="nav-link" data-scroll-target="#the-emotional-dimension-of-structural-change"><span class="header-section-number">14.5.1</span> The Emotional Dimension of Structural Change</a></li>
+  <li><a href="#principles-for-communication" id="toc-principles-for-communication" class="nav-link" data-scroll-target="#principles-for-communication"><span class="header-section-number">14.5.2</span> Principles for Communication</a></li>
+  <li><a href="#training-as-translation" id="toc-training-as-translation" class="nav-link" data-scroll-target="#training-as-translation"><span class="header-section-number">14.5.3</span> Training as Translation</a></li>
+  </ul></li>
+  <li><a href="#case-studies" id="toc-case-studies" class="nav-link" data-scroll-target="#case-studies"><span class="header-section-number">14.6</span> Case Studies</a>
+  <ul class="collapse">
+  <li><a href="#case-study-1-software-framework-migration-angularjs-to-angular" id="toc-case-study-1-software-framework-migration-angularjs-to-angular" class="nav-link" data-scroll-target="#case-study-1-software-framework-migration-angularjs-to-angular"><span class="header-section-number">14.6.1</span> Case Study 1: Software Framework Migration — AngularJS to Angular</a></li>
+  <li><a href="#case-study-2-organizational-restructuring" id="toc-case-study-2-organizational-restructuring" class="nav-link" data-scroll-target="#case-study-2-organizational-restructuring"><span class="header-section-number">14.6.2</span> Case Study 2: Organizational Restructuring</a></li>
+  <li><a href="#case-study-3-academic-paradigm-shifts" id="toc-case-study-3-academic-paradigm-shifts" class="nav-link" data-scroll-target="#case-study-3-academic-paradigm-shifts"><span class="header-section-number">14.6.3</span> Case Study 3: Academic Paradigm Shifts</a></li>
+  </ul></li>
+  <li><a href="#managing-the-human-side-of-structural-change" id="toc-managing-the-human-side-of-structural-change" class="nav-link" data-scroll-target="#managing-the-human-side-of-structural-change"><span class="header-section-number">14.7</span> Managing the Human Side of Structural Change</a>
+  <ul class="collapse">
+  <li><a href="#recognize-the-loss" id="toc-recognize-the-loss" class="nav-link" data-scroll-target="#recognize-the-loss"><span class="header-section-number">14.7.1</span> Recognize the Loss</a></li>
+  <li><a href="#create-a-compelling-vision" id="toc-create-a-compelling-vision" class="nav-link" data-scroll-target="#create-a-compelling-vision"><span class="header-section-number">14.7.2</span> Create a Compelling Vision</a></li>
+  <li><a href="#provide-support-through-the-gap" id="toc-provide-support-through-the-gap" class="nav-link" data-scroll-target="#provide-support-through-the-gap"><span class="header-section-number">14.7.3</span> Provide Support Through the Gap</a></li>
+  <li><a href="#build-a-coalition" id="toc-build-a-coalition" class="nav-link" data-scroll-target="#build-a-coalition"><span class="header-section-number">14.7.4</span> Build a Coalition</a></li>
+  <li><a href="#iterate-the-migration-process" id="toc-iterate-the-migration-process" class="nav-link" data-scroll-target="#iterate-the-migration-process"><span class="header-section-number">14.7.5</span> Iterate the Migration Process</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">14.8</span> Conclusion</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">14.9</span> Key Takeaways</a></li>
+  <li><a href="#exercises-and-reflections" id="toc-exercises-and-reflections" class="nav-link" data-scroll-target="#exercises-and-reflections"><span class="header-section-number">14.10</span> Exercises and Reflections</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch10-iteration.html">Part IV — Iteration and Versioning</a></li><li class="breadcrumb-item"><a href="./ch12-migration-between-versions.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>“There is nothing more difficult to take in hand, more perilous to conduct, or more uncertain in its success, than to take the lead in the introduction of a new order of things.”</em><br>
+— Niccolò Machiavelli, <em>The Prince</em> (1532)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>“The only constant is change. But change without continuity is chaos.”</em><br>
+— Heraclitus (paraphrased), with a practical amendment</p>
+</blockquote>
+<section id="the-bridge-between-versions" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="the-bridge-between-versions"><span class="header-section-number">14.1</span> The Bridge Between Versions</h2>
+<p>Iteration produces new versions. Versioning labels them. But between any two versions lies a gap—a difference in structure, meaning, or practice that must be traversed. <strong>Migration</strong> is the process of crossing that gap. It is the practical art of moving from one version of a structure to another without losing continuity, coherence, or the accumulated value invested in the earlier version.</p>
+<p>Migration is where the theory of iterative development meets the reality of human practice. It is one thing to design a better version of a framework; it is quite another to get an organization, a community, or a field of study to adopt it. The best new version is useless if no one can—or will—make the transition.</p>
+<p>This chapter examines the challenges of migration between versions of conceptual and architectural structures. We explore the trade-offs around backward compatibility, survey migration strategies, and consider the human and organizational dimensions of structural change. Migration, we will see, is as much a social challenge as a technical one.</p>
+</section>
+<section id="the-challenge-of-transition" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="the-challenge-of-transition"><span class="header-section-number">14.2</span> The Challenge of Transition</h2>
+<p>Why is migration between versions difficult? The answer lies in the nature of what a structure does for its users.</p>
+<p>A conceptual structure—whether a software architecture, a classification scheme, a theoretical framework, or a design system—serves as a <strong>cognitive infrastructure</strong>. It organizes thought, guides decision-making, and enables communication. People invest in learning it, building artifacts with it, and aligning their work around it. This investment is real, and it creates inertia.</p>
+<p>When a new version appears, that investment is at risk. Concepts that users have mastered may be relocated, renamed, or removed. Practices that have become habitual may need to be unlearned. Work products created under the old version may need to be reinterpreted or reworked. The gains promised by the new version must be weighed against the costs of transition.</p>
+<p>This creates a paradox: <strong>the more successful a structure is, the harder it becomes to change it.</strong> A widely adopted framework has more users with more invested knowledge and more dependent artifacts. The very success that proves the structure’s value also makes it resistant to the iteration that would keep it alive.</p>
+<section id="the-cost-of-not-migrating" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="the-cost-of-not-migrating"><span class="header-section-number">14.2.1</span> The Cost of Not Migrating</h3>
+<p>Yet the alternative to migration is stagnation. A structure that never undergoes major revision becomes increasingly irrelevant to the changing conditions it was meant to address. The cost of staying on the old version accumulates:</p>
+<ul>
+<li><strong>Missed improvements</strong>: New capabilities, insights, or efficiencies are foregone.</li>
+<li><strong>Growing divergence</strong>: The structure and the reality it models drift apart.</li>
+<li><strong>Community fragmentation</strong>: Some users move to new versions or alternative structures; others stay. Communication breaks down.</li>
+<li><strong>Technical or intellectual debt</strong>: Workarounds and patches proliferate as users compensate for the old version’s limitations.</li>
+</ul>
+<p>The decision to migrate is therefore a decision <em>between costs</em>: the cost of transition versus the cost of staying. Wise migration management acknowledges both.</p>
+</section>
+</section>
+<section id="backward-compatibility-when-to-maintain-when-to-break" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="backward-compatibility-when-to-maintain-when-to-break"><span class="header-section-number">14.3</span> Backward Compatibility: When to Maintain, When to Break</h2>
+<p>The central design decision for any new version of a structure is the degree of <strong>backward compatibility</strong> it maintains. Backward compatibility means that work done under the old version remains valid under the new version—concepts map cleanly, practices transfer, and artifacts remain interpretable.</p>
+<section id="the-case-for-maintaining-backward-compatibility" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="the-case-for-maintaining-backward-compatibility"><span class="header-section-number">14.3.1</span> The Case for Maintaining Backward Compatibility</h3>
+<p>Backward compatibility reduces the cost of migration. Users can upgrade gradually, with confidence that their existing work will not be invalidated. In software, this is why operating systems run old applications, and why libraries with millions of users hesitate to remove deprecated APIs.</p>
+<p>For conceptual frameworks, backward compatibility means:</p>
+<ul>
+<li>Old terminology remains valid, even if new terminology is introduced.</li>
+<li>Previously valid applications of the framework remain valid, even if the framework now handles new cases differently.</li>
+<li>Prior publications or artifacts based on the old version can still be understood and used within the new version.</li>
+</ul>
+<p>Backward compatibility is a gift to existing users. It signals respect for their investment and reduces the friction of adoption.</p>
+</section>
+<section id="the-case-for-breaking-compatibility" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="the-case-for-breaking-compatibility"><span class="header-section-number">14.3.2</span> The Case for Breaking Compatibility</h3>
+<p>But backward compatibility has a cost: it constrains the structure’s evolution. Sometimes the improvements that matter most require breaking with the past. A flawed concept cannot be removed if it must be preserved for compatibility. An ambiguous definition cannot be sharpened if that would invalidate prior interpretations. A suboptimal relationship between concepts cannot be restructured if the old structure must remain usable.</p>
+<p>The decision to break backward compatibility is always a judgment call. Some guidelines:</p>
+<ul>
+<li><strong>Break when the flaw is fundamental.</strong> If a core concept is misleading, harmful, or structurally unsound, maintaining compatibility perpetuates the problem.</li>
+<li><strong>Break when the improvement is transformative.</strong> If the new version enables entirely new capabilities or insights that the old version cannot support, the break may be justified.</li>
+<li><strong>Break when the user base is ready.</strong> A breaking change announced years in advance, with extensive documentation and tooling, is far less painful than one introduced without warning.</li>
+<li><strong>Break when staying is costlier.</strong> If maintaining compatibility would prevent necessary evolution and render the structure increasingly irrelevant, breaking is the responsible choice.</li>
+</ul>
+</section>
+<section id="deprecation-as-a-middle-path" class="level3" data-number="14.3.3">
+<h3 data-number="14.3.3" class="anchored" data-anchor-id="deprecation-as-a-middle-path"><span class="header-section-number">14.3.3</span> Deprecation as a Middle Path</h3>
+<p>Between perfect compatibility and abrupt breaking lies <strong>deprecation</strong> — the practice of marking elements as slated for removal in a future version while keeping them functional in the current version. Deprecation gives users time to adapt. It signals intent without forcing immediate action.</p>
+<p>A deprecation policy for a conceptual framework might specify:</p>
+<ul>
+<li>Which elements are deprecated and why.</li>
+<li>What should be used instead (the preferred replacement).</li>
+<li>The timeline for removal (e.g., “will be removed in version 5.0”).</li>
+<li>Migration guidance for transitioning away from deprecated elements.</li>
+</ul>
+<p>Deprecation is an act of respect. It treats users as partners in the structure’s evolution, not as obstacles to be overcome.</p>
+</section>
+</section>
+<section id="migration-strategies" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="migration-strategies"><span class="header-section-number">14.4</span> Migration Strategies</h2>
+<p>Different contexts call for different approaches to migration. The right strategy depends on the nature of the structure, the size and distribution of the user base, and the magnitude of the change.</p>
+<section id="gradual-migration" class="level3" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="gradual-migration"><span class="header-section-number">14.4.1</span> Gradual Migration</h3>
+<p><strong>Gradual migration</strong> allows users to transition to a new version piece by piece, rather than all at once. This is the dominant strategy in software, where libraries and frameworks often support running old and new code side by side during a transition period.</p>
+<p>For conceptual structures, gradual migration might mean:</p>
+<ul>
+<li>Introducing new concepts alongside old ones, with clear documentation of their relationship.</li>
+<li>Allowing teams or subcommunities to adopt the new version at their own pace.</li>
+<li>Providing translation guides that map old usages to new equivalents.</li>
+</ul>
+<p><strong>Advantages:</strong> Low risk. Users control the pace. Learning happens incrementally. Problems in the new version can be identified before everyone adopts it.</p>
+<p><strong>Disadvantages:</strong> Extended period of coexistence, which can be confusing. Fragmentation of practice during the transition. Potential for users to remain on the old version indefinitely.</p>
+</section>
+<section id="big-bang-migration" class="level3" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="big-bang-migration"><span class="header-section-number">14.4.2</span> Big Bang Migration</h3>
+<p><strong>Big bang migration</strong> cuts over from the old version to the new version at a single point in time. On a specific date, the old version is retired and everyone is expected to be using the new version.</p>
+<p>This approach is common in:</p>
+<ul>
+<li>Regulatory frameworks (e.g., a new accounting standard takes effect on January 1).</li>
+<li>Organizational restructuring (e.g., a new reporting structure is announced and implemented simultaneously).</li>
+<li>Curriculum reform (e.g., a new national curriculum takes effect in a specific school year).</li>
+</ul>
+<p><strong>Advantages:</strong> Clear, unambiguous transition. No prolonged period of coexistence. Forced adoption can accelerate learning.</p>
+<p><strong>Disadvantages:</strong> High risk. If the new version has problems, there is no fallback. Users may not be ready. Disruption is concentrated and intense. Resistance may be greater because users have no choice.</p>
+</section>
+<section id="parallel-run" class="level3" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="parallel-run"><span class="header-section-number">14.4.3</span> Parallel Run</h3>
+<p><strong>Parallel run</strong> involves operating both the old and new versions simultaneously for a defined period, then retiring the old version when confidence in the new version is established. This is common in high-stakes domains such as aviation, healthcare, and finance, where failure of the new system cannot be tolerated.</p>
+<p>For conceptual structures, a parallel run might involve:</p>
+<ul>
+<li>Maintaining both versions of a framework in official documentation and training materials.</li>
+<li>Supporting work products in either version during the transition.</li>
+<li>Using the parallel period to gather feedback and refine the new version.</li>
+</ul>
+<p><strong>Advantages:</strong> Safety net. If problems emerge, the old version remains available. Direct comparison between versions is possible. Users gain hands-on experience before committing.</p>
+<p><strong>Disadvantages:</strong> Resource intensive. Maintaining two versions simultaneously is costly in attention, documentation, and support. Prolonged parallel runs can delay full adoption and create confusion about which version is authoritative.</p>
+</section>
+<section id="bridge-structures" class="level3" data-number="14.4.4">
+<h3 data-number="14.4.4" class="anchored" data-anchor-id="bridge-structures"><span class="header-section-number">14.4.4</span> Bridge Structures</h3>
+<p><strong>Bridge structures</strong> are intermediate artifacts or practices that ease the transition between versions. They are not permanent; their purpose is to facilitate migration and then be retired.</p>
+<p>Examples include:</p>
+<ul>
+<li><strong>Compatibility layers</strong>: Adapters that allow work in the old version’s format to be processed by the new version’s tools.</li>
+<li><strong>Translation tables</strong>: Mappings that show how each concept in the old version corresponds to concepts in the new version.</li>
+<li><strong>Transitional concepts</strong>: Temporary concepts that span the old and new structures, helping users map their understanding across the gap.</li>
+<li><strong>Dual-example documentation</strong>: Worked examples shown in both the old and new versions, side by side, highlighting the differences.</li>
+</ul>
+<p>Bridge structures are particularly valuable when the gap between versions is large. They provide scaffolding for the cognitive work of transition.</p>
+</section>
+</section>
+<section id="communication-and-training-during-migration" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="communication-and-training-during-migration"><span class="header-section-number">14.5</span> Communication and Training During Migration</h2>
+<p>The technical aspects of migration—versioning schemes, compatibility decisions, strategy selection—are only half the challenge. The other half is <strong>human</strong>.</p>
+<section id="the-emotional-dimension-of-structural-change" class="level3" data-number="14.5.1">
+<h3 data-number="14.5.1" class="anchored" data-anchor-id="the-emotional-dimension-of-structural-change"><span class="header-section-number">14.5.1</span> The Emotional Dimension of Structural Change</h3>
+<p>Changing a structure that people rely on is inherently unsettling. Users have invested time and identity in the old version. They have taught it to others, built careers on it, and developed emotional attachments. For some, a new version feels like a rejection of their work.</p>
+<p>Acknowledging this emotional dimension is not sentimentality; it is pragmatism. A migration that ignores user attachment will generate resistance, no matter how technically sound the new version is.</p>
+</section>
+<section id="principles-for-communication" class="level3" data-number="14.5.2">
+<h3 data-number="14.5.2" class="anchored" data-anchor-id="principles-for-communication"><span class="header-section-number">14.5.2</span> Principles for Communication</h3>
+<p><strong>1. Explain the “why” first.</strong> Before describing what changed, explain why the change was necessary. What problem in the old version required a new version? What opportunity does the new version unlock? Users who understand the rationale are more likely to accept the disruption.</p>
+<p><strong>2. Acknowledge the cost.</strong> Do not pretend migration is cost-free. Honest acknowledgment builds trust. “We know this change requires effort. Here is what we are doing to make it easier.”</p>
+<p><strong>3. Provide a roadmap.</strong> What is the timeline? What will happen and when? What do users need to do, and by when? Uncertainty amplifies resistance.</p>
+<p><strong>4. Create feedback channels.</strong> Migration is not a one-way broadcast. Users need ways to ask questions, report problems, and provide input that can shape the new version or the migration process itself.</p>
+<p><strong>5. Celebrate early adopters.</strong> Recognize and support the first teams or individuals who migrate. Their experience generates knowledge that benefits everyone who follows.</p>
+</section>
+<section id="training-as-translation" class="level3" data-number="14.5.3">
+<h3 data-number="14.5.3" class="anchored" data-anchor-id="training-as-translation"><span class="header-section-number">14.5.3</span> Training as Translation</h3>
+<p>Training for migration is fundamentally about <strong>translation</strong> — helping users map their existing knowledge onto the new structure. Effective training does not treat users as blank slates; it leverages what they already know.</p>
+<p>Key training approaches:</p>
+<ul>
+<li><strong>Concept mapping</strong>: Show how each concept in the old version maps to the new version. Where is there continuity? Where is there change?</li>
+<li><strong>Before/after scenarios</strong>: Present the same problem solved using the old version and the new version. The contrast illuminates the differences.</li>
+<li><strong>Hands-on migration</strong>: Have users migrate a real (or realistic) artifact from the old version to the new version, with guidance and support.</li>
+<li><strong>Peer learning</strong>: Encourage early adopters to share their experience and tips with later adopters.</li>
+</ul>
+</section>
+</section>
+<section id="case-studies" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="case-studies"><span class="header-section-number">14.6</span> Case Studies</h2>
+<section id="case-study-1-software-framework-migration-angularjs-to-angular" class="level3" data-number="14.6.1">
+<h3 data-number="14.6.1" class="anchored" data-anchor-id="case-study-1-software-framework-migration-angularjs-to-angular"><span class="header-section-number">14.6.1</span> Case Study 1: Software Framework Migration — AngularJS to Angular</h3>
+<p>The migration from AngularJS (Angular 1.x) to Angular (Angular 2+) is one of the most extensively documented framework migrations in software history. Google released Angular (the successor) in 2016, and it was fundamentally different from AngularJS—different architecture, different language (TypeScript vs.&nbsp;JavaScript), different concept model.</p>
+<p>The migration was controversial. AngularJS had a massive user base with deeply invested knowledge. The breaking change was enormous. Google’s response included:</p>
+<ul>
+<li>A detailed migration guide called “Upgrading from AngularJS to Angular”</li>
+<li>The <code>ngUpgrade</code> library, which allowed running both frameworks side by side in the same application (a bridge structure)</li>
+<li>A step-by-step migration strategy that allowed incremental adoption</li>
+<li>Extensive communication about the rationale (performance, mobile support, modern tooling)</li>
+</ul>
+<p>The migration took years. Many projects remained on AngularJS for years after Angular’s release (AngularJS itself received long-term support until June 2021). The case illustrates that even with excellent tooling and communication, major structural migration is a multi-year endeavor.</p>
+<p>Key lessons: <strong>Bridge structures</strong> (ngUpgrade) are essential for gradual migration. <strong>Clear communication</strong> about why the break is necessary helps justify the cost. <strong>Long support timelines</strong> respect user investment. Even so, not all users will migrate.</p>
+</section>
+<section id="case-study-2-organizational-restructuring" class="level3" data-number="14.6.2">
+<h3 data-number="14.6.2" class="anchored" data-anchor-id="case-study-2-organizational-restructuring"><span class="header-section-number">14.6.2</span> Case Study 2: Organizational Restructuring</h3>
+<p>Organizational restructuring is a form of structural migration: the organization’s reporting lines, departmental boundaries, and decision-making processes are changed from one version to another.</p>
+<p>Consider a manufacturing company transitioning from a functional structure (engineering, marketing, sales as separate silos) to a product-based structure (cross-functional teams around product lines). This is a major version change with significant disruption.</p>
+<p>Successful migrations in this domain share common patterns:</p>
+<ul>
+<li><strong>Phased rollout</strong>: The new structure is piloted in one division before company-wide adoption.</li>
+<li><strong>Transitional structures</strong>: Temporary cross-functional committees bridge the old and new structures during the transition.</li>
+<li><strong>Communication cascade</strong>: Town halls, manager briefings, and Q&amp;A sessions at every level.</li>
+<li><strong>Role mapping</strong>: Clear documentation of how each role in the old structure maps to the new structure.</li>
+<li><strong>Performance continuity</strong>: Ensuring that evaluation and compensation systems adapt alongside the structural change.</li>
+</ul>
+<p>The human dimension is paramount in organizational migration. People’s jobs, relationships, and identities are at stake. The most technically sound reorganization will fail if it ignores the lived experience of those affected.</p>
+</section>
+<section id="case-study-3-academic-paradigm-shifts" class="level3" data-number="14.6.3">
+<h3 data-number="14.6.3" class="anchored" data-anchor-id="case-study-3-academic-paradigm-shifts"><span class="header-section-number">14.6.3</span> Case Study 3: Academic Paradigm Shifts</h3>
+<p>Thomas Kuhn’s <em>The Structure of Scientific Revolutions</em> (1962) can be read as a book about migration between versions of scientific frameworks. Kuhn’s concept of a <strong>paradigm shift</strong> is essentially a major version change in the structure of scientific knowledge—what we might call a “breaking change” in the discipline’s conceptual framework.</p>
+<p>Kuhn described the migration process:</p>
+<ol type="1">
+<li><strong>Anomalies accumulate</strong> within the existing paradigm (the old version shows problems).</li>
+<li><strong>Crisis</strong> develops as the anomalies resist resolution.</li>
+<li><strong>New paradigm emerges</strong> (a new version is proposed).</li>
+<li><strong>Resistance</strong> — established scientists, invested in the old paradigm, resist the new one. This is not irrational; it is a rational response to the cost of migration.</li>
+<li><strong>Conversion</strong> — through argument, evidence, and (crucially) generational replacement, the new paradigm gains adherents.</li>
+<li><strong>Incommensurability</strong> — Kuhn argued that paradigms are not fully comparable; concepts in the new paradigm do not map neatly onto the old.</li>
+</ol>
+<p>Kuhn’s analysis is sobering for anyone managing structural migration. It suggests that for very large structural changes, full migration may require a generational transition. The old paradigm’s adherents may never fully convert; they must retire. This is the extreme case, but it carries a lesson: <strong>some migrations are so deep that they cannot be accomplished through documentation and training alone.</strong></p>
+<p>For less radical migrations, Kuhn’s framework suggests strategies:</p>
+<ul>
+<li><strong>Accumulate and publicly document anomalies</strong> in the old structure (honest review).</li>
+<li><strong>Build crisis awareness</strong> by communicating the costs of staying on the old version.</li>
+<li><strong>Develop the new version thoroughly</strong> before advocating migration (show that it works).</li>
+<li><strong>Provide translation mechanisms</strong> between versions (addressing incommensurability).</li>
+<li><strong>Be patient</strong> — migration of deep conceptual structures takes time.</li>
+</ul>
+</section>
+</section>
+<section id="managing-the-human-side-of-structural-change" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="managing-the-human-side-of-structural-change"><span class="header-section-number">14.7</span> Managing the Human Side of Structural Change</h2>
+<p>The most technically elegant migration strategy will fail if it neglects the human beings who must live through the change. Drawing on research in organizational change management (e.g., Kotter, 1996; Bridges, 2003), we can identify key principles for the human side of structural migration.</p>
+<section id="recognize-the-loss" class="level3" data-number="14.7.1">
+<h3 data-number="14.7.1" class="anchored" data-anchor-id="recognize-the-loss"><span class="header-section-number">14.7.1</span> Recognize the Loss</h3>
+<p>William Bridges, in <em>Managing Transitions</em>, distinguishes between <em>change</em> (the structural event) and <em>transition</em> (the psychological process of letting go of the old and adapting to the new). Effective migration management addresses both.</p>
+<p>Users of the old version are losing something:</p>
+<ul>
+<li><strong>Competence</strong>: They were good at the old version. The new version makes them beginners again.</li>
+<li><strong>Identity</strong>: Being “the expert on Framework X” may no longer apply.</li>
+<li><strong>Community</strong>: Shared knowledge and practice around the old version will dissipate.</li>
+<li><strong>Investment</strong>: Time spent mastering the old version feels wasted.</li>
+</ul>
+<p>Acknowledging these losses is not weakness. It is the first step in helping people work through them.</p>
+</section>
+<section id="create-a-compelling-vision" class="level3" data-number="14.7.2">
+<h3 data-number="14.7.2" class="anchored" data-anchor-id="create-a-compelling-vision"><span class="header-section-number">14.7.2</span> Create a Compelling Vision</h3>
+<p>People will bear the cost of migration if they believe the destination is worthwhile. The vision for the new version must be:</p>
+<ul>
+<li><strong>Concrete</strong>: What will be different? What will be better?</li>
+<li><strong>Connected</strong>: How does this benefit the user’s specific work?</li>
+<li><strong>Credible</strong>: Is the vision backed by evidence and thoughtful design?</li>
+</ul>
+</section>
+<section id="provide-support-through-the-gap" class="level3" data-number="14.7.3">
+<h3 data-number="14.7.3" class="anchored" data-anchor-id="provide-support-through-the-gap"><span class="header-section-number">14.7.3</span> Provide Support Through the Gap</h3>
+<p>The period between letting go of the old version and fully adopting the new one is a “neutral zone” (Bridges’ term) characterized by uncertainty, confusion, and anxiety. Support during this period includes:</p>
+<ul>
+<li>Frequent communication</li>
+<li>Readily available help (offices hours, mentorship, migration coaches)</li>
+<li>Tolerance for mistakes and reduced productivity</li>
+<li>Temporary structures that provide stability (overlapping systems, temporary roles)</li>
+</ul>
+</section>
+<section id="build-a-coalition" class="level3" data-number="14.7.4">
+<h3 data-number="14.7.4" class="anchored" data-anchor-id="build-a-coalition"><span class="header-section-number">14.7.4</span> Build a Coalition</h3>
+<p>No one person can drive a migration alone. Successful migrations are led by coalitions of influential individuals who:</p>
+<ul>
+<li>Understand and advocate for the new version</li>
+<li>Model the transition in their own work</li>
+<li>Support others through the change</li>
+<li>Provide feedback to the migration organizers</li>
+</ul>
+</section>
+<section id="iterate-the-migration-process" class="level3" data-number="14.7.5">
+<h3 data-number="14.7.5" class="anchored" data-anchor-id="iterate-the-migration-process"><span class="header-section-number">14.7.5</span> Iterate the Migration Process</h3>
+<p>Finally, the migration itself should be subject to iteration. Gather feedback on the migration process and adapt. If users are struggling with a particular aspect of the transition, adjust the training, documentation, or timeline. A rigid migration plan that ignores emerging problems will fail.</p>
+</section>
+</section>
+<section id="conclusion" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">14.8</span> Conclusion</h2>
+<p>Migration between versions is where the abstract principles of iteration and versioning meet the messy reality of human practice. It is the bridge between what a structure was and what it can become.</p>
+<p>The design of that bridge requires technical judgment—decisions about backward compatibility, selection of migration strategy, creation of migration artifacts. But it also requires human wisdom: empathy for the users who must cross, patience with the pace of learning, and respect for the investments that have been made in the old version.</p>
+<p>A structure that cannot migrate will eventually die, abandoned as users move to alternatives that better serve their needs. But a structure that migrates carelessly—breaking faith with its users, ignoring their concerns, forcing change without support—will also die, this time from desertion.</p>
+<p>The art of living architecture lies in maintaining this balance: evolving boldly enough to remain relevant, migrating carefully enough to bring everyone along.</p>
+<blockquote class="blockquote">
+<p><em>The best version is not the one that is most advanced. It is the one that people can actually reach.</em></p>
+</blockquote>
+</section>
+<section id="key-takeaways" class="level2" data-number="14.9">
+<h2 data-number="14.9" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">14.9</span> Key Takeaways</h2>
+<ul>
+<li>Migration is the process of moving from one version of a structure to another while preserving continuity, coherence, and user investment.</li>
+<li>The more successful a structure is, the harder migration becomes, because more users and artifacts depend on it.</li>
+<li>Backward compatibility reduces migration cost but constrains evolution; breaking compatibility enables progress but creates disruption. Deprecation offers a middle path.</li>
+<li>Key migration strategies include gradual migration, big bang migration, parallel run, and the use of bridge structures.</li>
+<li>Communication during migration must explain the “why,” acknowledge costs, provide a roadmap, and create feedback channels.</li>
+<li>The human side of migration involves recognizing loss, creating a compelling vision for the new version, providing support during the transition, and building a coalition of advocates.</li>
+<li>The migration process itself should be iterated upon based on feedback.</li>
+<li>Case studies from software frameworks (AngularJS to Angular), organizational restructuring, and academic paradigm shifts illustrate universal migration principles.</li>
+</ul>
+</section>
+<section id="exercises-and-reflections" class="level2" data-number="14.10">
+<h2 data-number="14.10" class="anchored" data-anchor-id="exercises-and-reflections"><span class="header-section-number">14.10</span> Exercises and Reflections</h2>
+<ol type="1">
+<li><p><strong>Map a past migration.</strong> Think of a significant version change you have experienced—a software framework, a classification system, a process methodology, an organizational structure. How was the migration managed? What worked and what did not? What would you do differently using the concepts from this chapter?</p></li>
+<li><p><strong>Design a migration plan.</strong> Choose a structure you are familiar with that is due for a major revision. Draft a migration plan that specifies: (a) the migration strategy (gradual, big bang, parallel run, or hybrid), (b) the bridge structures you would create, (c) the communication and training plan, and (d) the timeline and success criteria.</p></li>
+<li><p><strong>Assess backward compatibility.</strong> Consider a new version of a framework or model in your field. Identify three changes that could be made while maintaining full backward compatibility, and three changes that would require breaking it. For the breaking changes, draft a deprecation policy and timeline that would minimize user disruption.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch11-versioning.html" class="pagination-link" aria-label="Chapter 11 — Versioning">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11 — Versioning</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch13-map-is-not-reality.html" class="pagination-link" aria-label="Chapter 13 — Map Is Not Reality">
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13 — Map Is Not Reality</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>19&nbsp; Chapter 17 — Long-Term Refinement – Feedback, Revision, and Living Architecture</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch18-living-architecture-loop.html" rel="next">
+<link href="./ch16-living-structure.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch16-living-structure.html">Part VI — Living Architecture</a></li><li class="breadcrumb-item"><a href="./ch17-long-term-refinement.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Feedback, Revision, and Living Architecture</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Structures Remain Open, Adaptive, and Real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — Structure Meets Reality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch01-from-map-to-use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — From Map to Use</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch02-reality-feedback.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2 — Reality Feedback</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch03-when-the-map-fails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Failure, Drift, and Revision Signals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch04-failure-signals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4 — Failure Signals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch05-concept-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 5 — Concept Drift</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch06-structure-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 6 — Structure Drift</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Updating Models and Boundaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch07-model-update.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Chapter 7 — Model Update</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch08-boundary-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Chapter 8 — Boundary Revision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch09-category-and-layer-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Chapter 9 — Category and Layer Revision</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV — Iteration and Versioning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10-iteration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Chapter 10 — Iteration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch11-versioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11 — Versioning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch12-migration-between-versions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V — Anti-Dogmatism</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch13-map-is-not-reality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13 — Map Is Not Reality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch14-structure-as-hypothesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Chapter 14 — Structure as Hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch15-avoiding-structural-tyranny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chapter 15 — Avoiding Structural Tyranny</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI — Living Architecture</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch16-living-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16 — Living Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch17-long-term-refinement.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch18-living-architecture-loop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-the-long-arc-of-refinement" id="toc-introduction-the-long-arc-of-refinement" class="nav-link active" data-scroll-target="#introduction-the-long-arc-of-refinement"><span class="header-section-number">19.1</span> Introduction: The Long Arc of Refinement</a></li>
+  <li><a href="#how-accumulated-experience-enriches-a-framework" id="toc-how-accumulated-experience-enriches-a-framework" class="nav-link" data-scroll-target="#how-accumulated-experience-enriches-a-framework"><span class="header-section-number">19.2</span> How Accumulated Experience Enriches a Framework</a>
+  <ul class="collapse">
+  <li><a href="#the-depth-of-the-case-archive" id="toc-the-depth-of-the-case-archive" class="nav-link" data-scroll-target="#the-depth-of-the-case-archive"><span class="header-section-number">19.2.1</span> The Depth of the Case Archive</a></li>
+  <li><a href="#the-refinement-of-categories" id="toc-the-refinement-of-categories" class="nav-link" data-scroll-target="#the-refinement-of-categories"><span class="header-section-number">19.2.2</span> The Refinement of Categories</a></li>
+  <li><a href="#the-articulation-of-principles" id="toc-the-articulation-of-principles" class="nav-link" data-scroll-target="#the-articulation-of-principles"><span class="header-section-number">19.2.3</span> The Articulation of Principles</a></li>
+  <li><a href="#the-emergence-of-heuristics" id="toc-the-emergence-of-heuristics" class="nav-link" data-scroll-target="#the-emergence-of-heuristics"><span class="header-section-number">19.2.4</span> The Emergence of Heuristics</a></li>
+  </ul></li>
+  <li><a href="#the-role-of-expert-judgment-in-structural-evolution" id="toc-the-role-of-expert-judgment-in-structural-evolution" class="nav-link" data-scroll-target="#the-role-of-expert-judgment-in-structural-evolution"><span class="header-section-number">19.3</span> The Role of Expert Judgment in Structural Evolution</a>
+  <ul class="collapse">
+  <li><a href="#tacit-knowledge-and-craft" id="toc-tacit-knowledge-and-craft" class="nav-link" data-scroll-target="#tacit-knowledge-and-craft"><span class="header-section-number">19.3.1</span> Tacit Knowledge and Craft</a></li>
+  <li><a href="#judgment-at-multiple-levels" id="toc-judgment-at-multiple-levels" class="nav-link" data-scroll-target="#judgment-at-multiple-levels"><span class="header-section-number">19.3.2</span> Judgment at Multiple Levels</a></li>
+  <li><a href="#the-wisdom-of-communities" id="toc-the-wisdom-of-communities" class="nav-link" data-scroll-target="#the-wisdom-of-communities"><span class="header-section-number">19.3.3</span> The Wisdom of Communities</a></li>
+  </ul></li>
+  <li><a href="#learning-from-a-growing-body-of-cases" id="toc-learning-from-a-growing-body-of-cases" class="nav-link" data-scroll-target="#learning-from-a-growing-body-of-cases"><span class="header-section-number">19.4</span> Learning from a Growing Body of Cases</a>
+  <ul class="collapse">
+  <li><a href="#case-based-reasoning" id="toc-case-based-reasoning" class="nav-link" data-scroll-target="#case-based-reasoning"><span class="header-section-number">19.4.1</span> Case-Based Reasoning</a></li>
+  <li><a href="#pattern-languages" id="toc-pattern-languages" class="nav-link" data-scroll-target="#pattern-languages"><span class="header-section-number">19.4.2</span> Pattern Languages</a></li>
+  <li><a href="#meta-learning-learning-about-learning" id="toc-meta-learning-learning-about-learning" class="nav-link" data-scroll-target="#meta-learning-learning-about-learning"><span class="header-section-number">19.4.3</span> Meta-Learning: Learning About Learning</a></li>
+  </ul></li>
+  <li><a href="#archiving-and-learning-from-past-revisions" id="toc-archiving-and-learning-from-past-revisions" class="nav-link" data-scroll-target="#archiving-and-learning-from-past-revisions"><span class="header-section-number">19.5</span> Archiving and Learning from Past Revisions</a>
+  <ul class="collapse">
+  <li><a href="#the-revision-archive" id="toc-the-revision-archive" class="nav-link" data-scroll-target="#the-revision-archive"><span class="header-section-number">19.5.1</span> The Revision Archive</a></li>
+  <li><a href="#revision-post-mortems" id="toc-revision-post-mortems" class="nav-link" data-scroll-target="#revision-post-mortems"><span class="header-section-number">19.5.2</span> Revision Post-Mortems</a></li>
+  <li><a href="#learning-from-failed-revisions" id="toc-learning-from-failed-revisions" class="nav-link" data-scroll-target="#learning-from-failed-revisions"><span class="header-section-number">19.5.3</span> Learning from Failed Revisions</a></li>
+  </ul></li>
+  <li><a href="#the-difference-between-refinement-and-complication" id="toc-the-difference-between-refinement-and-complication" class="nav-link" data-scroll-target="#the-difference-between-refinement-and-complication"><span class="header-section-number">19.6</span> The Difference Between Refinement and Complication</a>
+  <ul class="collapse">
+  <li><a href="#the-signs-of-genuine-refinement" id="toc-the-signs-of-genuine-refinement" class="nav-link" data-scroll-target="#the-signs-of-genuine-refinement"><span class="header-section-number">19.6.1</span> The Signs of Genuine Refinement</a></li>
+  <li><a href="#the-warning-signs-of-complication" id="toc-the-warning-signs-of-complication" class="nav-link" data-scroll-target="#the-warning-signs-of-complication"><span class="header-section-number">19.6.2</span> The Warning Signs of Complication</a></li>
+  <li><a href="#the-discipline-of-pruning" id="toc-the-discipline-of-pruning" class="nav-link" data-scroll-target="#the-discipline-of-pruning"><span class="header-section-number">19.6.3</span> The Discipline of Pruning</a></li>
+  <li><a href="#the-role-of-standards" id="toc-the-role-of-standards" class="nav-link" data-scroll-target="#the-role-of-standards"><span class="header-section-number">19.6.4</span> The Role of Standards</a></li>
+  </ul></li>
+  <li><a href="#case-studies-frameworks-that-have-matured-gracefully" id="toc-case-studies-frameworks-that-have-matured-gracefully" class="nav-link" data-scroll-target="#case-studies-frameworks-that-have-matured-gracefully"><span class="header-section-number">19.7</span> Case Studies: Frameworks That Have Matured Gracefully</a>
+  <ul class="collapse">
+  <li><a href="#common-law-jurisprudence" id="toc-common-law-jurisprudence" class="nav-link" data-scroll-target="#common-law-jurisprudence"><span class="header-section-number">19.7.1</span> Common Law Jurisprudence</a></li>
+  <li><a href="#the-cmmi-framework" id="toc-the-cmmi-framework" class="nav-link" data-scroll-target="#the-cmmi-framework"><span class="header-section-number">19.7.2</span> The CMMI Framework</a></li>
+  <li><a href="#the-balanced-scorecard" id="toc-the-balanced-scorecard" class="nav-link" data-scroll-target="#the-balanced-scorecard"><span class="header-section-number">19.7.3</span> The Balanced Scorecard</a></li>
+  <li><a href="#the-togaf-standard" id="toc-the-togaf-standard" class="nav-link" data-scroll-target="#the-togaf-standard"><span class="header-section-number">19.7.4</span> The TOGAF Standard</a></li>
+  </ul></li>
+  <li><a href="#the-qualities-of-graceful-maturation" id="toc-the-qualities-of-graceful-maturation" class="nav-link" data-scroll-target="#the-qualities-of-graceful-maturation"><span class="header-section-number">19.8</span> The Qualities of Graceful Maturation</a></li>
+  <li><a href="#conclusion-the-patience-of-refinement" id="toc-conclusion-the-patience-of-refinement" class="nav-link" data-scroll-target="#conclusion-the-patience-of-refinement"><span class="header-section-number">19.9</span> Conclusion: The Patience of Refinement</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">19.10</span> Key Takeaways</a></li>
+  <li><a href="#exercises-and-reflections" id="toc-exercises-and-reflections" class="nav-link" data-scroll-target="#exercises-and-reflections"><span class="header-section-number">19.11</span> Exercises and Reflections</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch16-living-structure.html">Part VI — Living Architecture</a></li><li class="breadcrumb-item"><a href="./ch17-long-term-refinement.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>“A great building must begin with the unmeasurable, must go through measurable means when it is being designed, and in the end must be unmeasurable.”</em> — Louis Kahn</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>“The best of what we create is not designed; it evolves.”</em> — Christopher Alexander, <em>The Timeless Way of Building</em> (1979)</p>
+</blockquote>
+<hr>
+<section id="introduction-the-long-arc-of-refinement" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="introduction-the-long-arc-of-refinement"><span class="header-section-number">19.1</span> Introduction: The Long Arc of Refinement</h2>
+<p>In Chapter 16, we examined the characteristics that make a structure living—modularity, revisability, transparency, and permeability. But a living structure does not merely survive; it matures. Through sustained engagement with reality, through the accumulation of cases, through the exercise of judgment, a framework can grow not just older but wiser. This chapter explores the long arc of structural refinement: how architectures, methodologies, and conceptual frameworks improve over time through practice, feedback, and the development of collective expertise.</p>
+<p>The concept of refinement distinguishes living structures from structures that merely persist. A structure that persists unchanged is not alive; it is dormant. A structure that changes randomly is not refining; it is drifting. Refinement implies directional improvement—the gradual enhancement of a structure’s coherence, utility, and alignment with the reality it models. It is the process by which a good framework becomes a great one, and a great framework becomes a lasting contribution to human understanding and practice.</p>
+<p>This chapter asks: How does refinement happen? What mechanisms drive it? How can we design structures and communities that support long-term refinement rather than stagnation or chaotic change?</p>
+</section>
+<section id="how-accumulated-experience-enriches-a-framework" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="how-accumulated-experience-enriches-a-framework"><span class="header-section-number">19.2</span> How Accumulated Experience Enriches a Framework</h2>
+<p>A framework in its early days is an abstraction. It has been designed, but it has not yet been lived. Its categories are logical but untested. Its principles are reasoned but unseasoned. Like a ship that has never left port, it is beautiful in theory but unknown in practice.</p>
+<p>Experience changes this. Each application of a framework tests its boundaries, reveals its assumptions, and exposes its blind spots. These encounters leave traces—not just in the structure itself but in the understanding of those who use it. Over time, a body of experience accumulates that enriches the framework in ways that pure design never could.</p>
+<section id="the-depth-of-the-case-archive" class="level3" data-number="19.2.1">
+<h3 data-number="19.2.1" class="anchored" data-anchor-id="the-depth-of-the-case-archive"><span class="header-section-number">19.2.1</span> The Depth of the Case Archive</h3>
+<p>Every application of a framework is a case. Some cases confirm the framework’s utility. Others challenge it. Others reveal new dimensions of the domain that the framework had not considered. The accumulated archive of cases becomes one of the framework’s greatest assets.</p>
+<p>Consider the legal system. The common law tradition builds legal doctrine through the accumulation of cases over centuries. Each case is a concrete application of abstract legal principles to a specific factual situation. The body of case law that results is far richer and more nuanced than any initial legal code could have been. It contains not just the rules but their exceptions; not just the principles but their limits; not just the categories but their boundaries <span class="citation" data-cites="levy1999">(<a href="references.html#ref-levy1999" role="doc-biblioref"><strong>levy1999?</strong></a>)</span>.</p>
+<p>A conceptual framework that maintains a rich case archive gains similar depth. The archive becomes a resource for understanding how the framework works in different contexts. It provides precedents for future applications. It reveals patterns that would be invisible from the abstract principles alone. It transforms the framework from a set of rules into a living tradition of practice.</p>
+</section>
+<section id="the-refinement-of-categories" class="level3" data-number="19.2.2">
+<h3 data-number="19.2.2" class="anchored" data-anchor-id="the-refinement-of-categories"><span class="header-section-number">19.2.2</span> The Refinement of Categories</h3>
+<p>Categories that start as rough approximations become refined through repeated use. Consider the biological concept of “species.” Early classification systems grouped organisms by observable features—a practical but imprecise approach. Through centuries of accumulated observation, the concept of species was refined to incorporate reproductive isolation, genetic evidence, and phylogenetic relationships. The category became more precise, more informative, and more useful.</p>
+<p>This refinement happens in all domains. The categories of a software architecture pattern become more nuanced as they are applied to diverse systems. The customer segments in a marketing framework become more accurate as they are tested against real purchasing behavior. The phases of a design methodology become more clearly defined as they are mapped to concrete project experiences.</p>
+<p>Refinement is not merely the addition of detail. It is the <em>deepening</em> of understanding—the movement from superficial classification to substantive insight. A refined category captures not just what something looks like but how it behaves, what causes it, and what it predicts.</p>
+</section>
+<section id="the-articulation-of-principles" class="level3" data-number="19.2.3">
+<h3 data-number="19.2.3" class="anchored" data-anchor-id="the-articulation-of-principles"><span class="header-section-number">19.2.3</span> The Articulation of Principles</h3>
+<p>Just as categories are refined through use, principles are articulated through experience. An initial principle—“design for simplicity”—is vague and open to interpretation. Through application, it becomes more articulated. We learn what simplicity means in different contexts, what trade-offs it entails, and what practices support it. The principle does not change so much as it becomes more richly understood.</p>
+<p>This articulation is captured in the accumulated wisdom of a community of practice. Experienced practitioners develop a tacit understanding of how to apply principles in context—an understanding that cannot be fully captured in formal rules but is transmitted through mentorship, storytelling, and shared reflection. This tacit dimension is one of the hallmarks of a mature framework <span class="citation" data-cites="polanyi1958">(<a href="references.html#ref-polanyi1958" role="doc-biblioref"><strong>polanyi1958?</strong></a>)</span>.</p>
+</section>
+<section id="the-emergence-of-heuristics" class="level3" data-number="19.2.4">
+<h3 data-number="19.2.4" class="anchored" data-anchor-id="the-emergence-of-heuristics"><span class="header-section-number">19.2.4</span> The Emergence of Heuristics</h3>
+<p>Beyond formal rules and articulated principles, mature frameworks develop heuristics: rules of thumb that guide judgment in situations where formal analysis is impractical or inconclusive. Heuristics are the distilled wisdom of accumulated experience—shortcuts that capture what has been learned from many cases.</p>
+<p>A mature software architecture framework might include heuristics like “prefer composition over inheritance” or “avoid premature optimization.” These are not formal rules that can be applied mechanically; they are guidelines that encode the collective experience of a community. They cannot be proven in the abstract but have been validated through repeated application.</p>
+<p>Heuristics are a sign of a framework’s maturity. They represent the crystallization of experience into actionable guidance. A framework that has only formal rules is young. A framework that has accumulated heuristics has been seasoned by use.</p>
+</section>
+</section>
+<section id="the-role-of-expert-judgment-in-structural-evolution" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="the-role-of-expert-judgment-in-structural-evolution"><span class="header-section-number">19.3</span> The Role of Expert Judgment in Structural Evolution</h2>
+<p>The refinement of a living structure does not happen automatically. It requires judgment—the discernment of what to preserve, what to modify, and what to abandon. This judgment is not reducible to algorithmic rules. It is a human capacity that develops through experience and reflection.</p>
+<section id="tacit-knowledge-and-craft" class="level3" data-number="19.3.1">
+<h3 data-number="19.3.1" class="anchored" data-anchor-id="tacit-knowledge-and-craft"><span class="header-section-number">19.3.1</span> Tacit Knowledge and Craft</h3>
+<p>The philosopher Michael Polanyi famously observed that “we can know more than we can tell” <span class="citation" data-cites="polanyi1966">(<a href="references.html#ref-polanyi1966" role="doc-biblioref"><strong>polanyi1966?</strong></a>)</span>. Tacit knowledge—the knowledge embedded in skilled practice—is a crucial component of structural refinement. Experienced practitioners of a framework understand it in ways that cannot be fully captured in documentation or formal rules.</p>
+<p>This tacit knowledge is essential for wise judgment. When a case challenges the framework’s categories, the experienced practitioner senses the misalignment before it can be formally articulated. When a principle needs refinement, the experienced practitioner feels the inadequacy of the current formulation. This tacit knowing guides the revision process in ways that purely analytical approaches cannot.</p>
+<p>The challenge is that tacit knowledge is difficult to transmit and easy to lose. It resides in individuals and communities, not in documents or systems. A living structure must therefore maintain the social and institutional conditions that allow tacit knowledge to be developed, shared, and preserved.</p>
+</section>
+<section id="judgment-at-multiple-levels" class="level3" data-number="19.3.2">
+<h3 data-number="19.3.2" class="anchored" data-anchor-id="judgment-at-multiple-levels"><span class="header-section-number">19.3.2</span> Judgment at Multiple Levels</h3>
+<p>Structural refinement requires judgment at multiple levels of the framework:</p>
+<p><strong>At the level of individual cases</strong>, judgment is required to determine whether a particular application supports or challenges the framework. Is this an anomalous case that can be safely ignored, or is it a signal that the framework needs revision? This judgment requires both deep knowledge of the framework and sensitivity to the particularities of the case.</p>
+<p><strong>At the level of categories and principles</strong>, judgment is required to determine what kind of revision is warranted. Should a category be expanded, split, or abandoned? Should a principle be qualified, relaxed, or replaced? These decisions require an understanding of the framework’s overall architecture and the relationships between its components.</p>
+<p><strong>At the level of the framework’s core</strong>, judgment is required to determine when fundamental assumptions must be reconsidered. This is the most consequential level of judgment because it touches the framework’s identity. It requires intellectual courage, humility, and a willingness to challenge one’s own most deeply held commitments.</p>
+</section>
+<section id="the-wisdom-of-communities" class="level3" data-number="19.3.3">
+<h3 data-number="19.3.3" class="anchored" data-anchor-id="the-wisdom-of-communities"><span class="header-section-number">19.3.3</span> The Wisdom of Communities</h3>
+<p>Expert judgment is not purely individual. It is cultivated within communities of practice. A community that has been working with a framework for years develops collective judgment—shared standards of evaluation, common sense of what constitutes good application, and norms of critical discourse.</p>
+<p>This collective judgment is the framework’s immune system. It distinguishes productive revisions from destructive ones. It ensures that changes are tested against the community’s accumulated experience. It maintains the framework’s coherence across many contributors and many applications.</p>
+<p>The governance structures of a framework—the processes by which changes are proposed, debated, and accepted—are mechanisms for exercising collective judgment. They channel the community’s expertise toward the refinement of the structure. A framework whose governance is working well is one where collective judgment is effectively applied to structural evolution.</p>
+</section>
+</section>
+<section id="learning-from-a-growing-body-of-cases" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="learning-from-a-growing-body-of-cases"><span class="header-section-number">19.4</span> Learning from a Growing Body of Cases</h2>
+<p>The accumulated body of cases is not merely a static archive. It is a resource for ongoing learning. How can we systematically learn from the cases that accumulate through a framework’s use?</p>
+<section id="case-based-reasoning" class="level3" data-number="19.4.1">
+<h3 data-number="19.4.1" class="anchored" data-anchor-id="case-based-reasoning"><span class="header-section-number">19.4.1</span> Case-Based Reasoning</h3>
+<p>The field of case-based reasoning (CBR) offers a formal approach to learning from cases. In CBR, new problems are solved by retrieving and adapting solutions from similar past cases. The case library grows over time, and the system’s competence improves as its library becomes more comprehensive <span class="citation" data-cites="kolodner1993">(<a href="references.html#ref-kolodner1993" role="doc-biblioref"><strong>kolodner1993?</strong></a>)</span>.</p>
+<p>Conceptual frameworks can adopt a similar approach. Each application of the framework becomes a case in an evolving library. When new situations arise, practitioners consult the library for similar cases, adapting previous solutions to the current context. Over time, the library becomes a rich resource that augments the framework’s formal rules.</p>
+<p>This approach is particularly powerful when the framework is applied to diverse contexts. A case library that spans many domains reveals patterns that would be invisible from a narrow base of experience. It shows how the framework generalizes across contexts and where it needs to be adapted.</p>
+</section>
+<section id="pattern-languages" class="level3" data-number="19.4.2">
+<h3 data-number="19.4.2" class="anchored" data-anchor-id="pattern-languages"><span class="header-section-number">19.4.2</span> Pattern Languages</h3>
+<p>Christopher Alexander’s concept of pattern languages provides another model for learning from cases. Alexander, an architect, observed that good design in buildings and communities arises from the application of patterns—recurring solutions to recurring problems. A pattern language is a collection of such patterns, organized hierarchically, that guides the design of complex wholes <span class="citation" data-cites="alexander1977">(<a href="references.html#ref-alexander1977" role="doc-biblioref"><strong>alexander1977?</strong></a>)</span>.</p>
+<p>A pattern language is not a fixed prescription. It evolves as new patterns are discovered and old ones are refined. Each pattern captures the wisdom of many cases. Alexander’s pattern language for architecture contains 253 patterns, each documented with a description of the problem, the context, the solution, and the evidence for its effectiveness.</p>
+<p>This approach can be applied to any domain where knowledge accumulates through practice. A framework for software architecture can be expressed as a pattern language. A methodology for organizational design can be organized as a collection of patterns. Each pattern embodies the accumulated experience of many cases.</p>
+</section>
+<section id="meta-learning-learning-about-learning" class="level3" data-number="19.4.3">
+<h3 data-number="19.4.3" class="anchored" data-anchor-id="meta-learning-learning-about-learning"><span class="header-section-number">19.4.3</span> Meta-Learning: Learning About Learning</h3>
+<p>Beyond learning from individual cases, a mature community learns about its own learning. It asks meta-questions: What kinds of cases do we see most frequently? Where do our frameworks most often fail? What patterns of revision are most common? What conditions support successful refinement?</p>
+<p>This meta-learning is essential for accelerating the refinement process. It helps the community identify systemic weaknesses, anticipate emerging challenges, and invest in the most productive areas of development.</p>
+</section>
+</section>
+<section id="archiving-and-learning-from-past-revisions" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="archiving-and-learning-from-past-revisions"><span class="header-section-number">19.5</span> Archiving and Learning from Past Revisions</h2>
+<p>A framework that does not learn from its own revision history is condemned to repeat its mistakes. Archiving past revisions and studying them systematically is a crucial practice for long-term refinement.</p>
+<section id="the-revision-archive" class="level3" data-number="19.5.1">
+<h3 data-number="19.5.1" class="anchored" data-anchor-id="the-revision-archive"><span class="header-section-number">19.5.1</span> The Revision Archive</h3>
+<p>Every revision to a framework should be documented with sufficient context to be understood by future practitioners. What prompted the revision? What alternatives were considered? What evidence supported the change? What were the expected benefits and risks? How was the revision validated?</p>
+<p>This documentation is not merely a historical record. It is a resource for future decision-making. When future practitioners face similar challenges, they can consult the revision archive to understand how those challenges were addressed before. They can learn from both the successes and the failures of past revisions.</p>
+</section>
+<section id="revision-post-mortems" class="level3" data-number="19.5.2">
+<h3 data-number="19.5.2" class="anchored" data-anchor-id="revision-post-mortems"><span class="header-section-number">19.5.2</span> Revision Post-Mortems</h3>
+<p>After significant revisions, a post-mortem should be conducted. What went well? What went wrong? What was learned? What would be done differently next time? The post-mortem transforms the revision itself into a learning opportunity.</p>
+<p>Post-mortems are a well-established practice in software engineering, where teams analyze project outcomes to improve future work. The same practice can be applied to the revision of any conceptual or organizational structure. A post-mortem culture ensures that the community does not simply move from revision to revision but continually improves its revision practices.</p>
+</section>
+<section id="learning-from-failed-revisions" class="level3" data-number="19.5.3">
+<h3 data-number="19.5.3" class="anchored" data-anchor-id="learning-from-failed-revisions"><span class="header-section-number">19.5.3</span> Learning from Failed Revisions</h3>
+<p>Not every revision is an improvement. Some revisions introduce new problems, break existing functionality, or fail to achieve their intended benefits. These failed revisions are valuable learning opportunities.</p>
+<p>A mature community treats failed revisions not as embarrassments to be forgotten but as experiments that yielded important data. It studies why the revision failed, what conditions led to its adoption, and what safeguards might prevent similar failures in the future. This openness to learning from failure is a hallmark of a healthy community of practice.</p>
+</section>
+</section>
+<section id="the-difference-between-refinement-and-complication" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="the-difference-between-refinement-and-complication"><span class="header-section-number">19.6</span> The Difference Between Refinement and Complication</h2>
+<p>One of the most critical distinctions in long-term structural evolution is the difference between refinement and complication. Refinement makes a structure more effective; complication makes it more complex without adding commensurate value. Refinement is the mark of a mature structure; complication is the mark of a degenerating one.</p>
+<section id="the-signs-of-genuine-refinement" class="level3" data-number="19.6.1">
+<h3 data-number="19.6.1" class="anchored" data-anchor-id="the-signs-of-genuine-refinement"><span class="header-section-number">19.6.1</span> The Signs of Genuine Refinement</h3>
+<p>Genuine refinement has several identifiable characteristics:</p>
+<p><strong>Increased precision.</strong> Refinement makes the structure’s categories, principles, and relationships more precise. Ambiguity is reduced; edge cases are addressed; the conditions of applicability are clarified.</p>
+<p><strong>Increased coherence.</strong> Refinement improves the internal consistency of the structure. Its parts fit together better. Contradictions are resolved. The overall logic of the framework becomes clearer.</p>
+<p><strong>Increased utility.</strong> Refinement makes the structure more useful for its intended purposes. It produces better predictions, more effective guidance, or more insightful analysis. The ultimate test of refinement is pragmatic: does the structure work better after the change?</p>
+</section>
+<section id="the-warning-signs-of-complication" class="level3" data-number="19.6.2">
+<h3 data-number="19.6.2" class="anchored" data-anchor-id="the-warning-signs-of-complication"><span class="header-section-number">19.6.2</span> The Warning Signs of Complication</h3>
+<p>Complication, by contrast, shows different signs:</p>
+<p><strong>Growth without deepening.</strong> The structure accumulates new categories, rules, or exceptions without increasing understanding. It becomes larger but not deeper.</p>
+<p><strong>Reduced usability.</strong> As the structure becomes more complicated, it becomes harder to learn, remember, and apply. The overhead of using the framework begins to outweigh its benefits.</p>
+<p><strong>Internal fragmentation.</strong> The structure becomes internally inconsistent as specialized extensions proliferate without integration. Different parts of the framework pull in different directions.</p>
+<p><strong>Diminishing returns.</strong> Each new addition provides less value than the last. The effort required to maintain the structure grows faster than the benefits it delivers.</p>
+</section>
+<section id="the-discipline-of-pruning" class="level3" data-number="19.6.3">
+<h3 data-number="19.6.3" class="anchored" data-anchor-id="the-discipline-of-pruning"><span class="header-section-number">19.6.3</span> The Discipline of Pruning</h3>
+<p>Just as a garden requires pruning to remain healthy, a conceptual structure requires the disciplined removal of components that no longer serve their purpose. Pruning is an essential counterpart to growth. A framework that only adds but never removes becomes overgrown and unmanageable.</p>
+<p>Pruning requires difficult judgments. Which categories are no longer useful? Which principles have been superseded? Which extensions have created more complication than value? These decisions are often contested, as people have investments in the elements they have created. But pruning is essential for preventing a framework from collapsing under its own weight.</p>
+</section>
+<section id="the-role-of-standards" class="level3" data-number="19.6.4">
+<h3 data-number="19.6.4" class="anchored" data-anchor-id="the-role-of-standards"><span class="header-section-number">19.6.4</span> The Role of Standards</h3>
+<p>Standards play a crucial role in distinguishing refinement from complication. A well-defined standard provides criteria for evaluating proposed changes. It establishes what counts as an improvement and what counts as unnecessary complication.</p>
+<p>Standards should themselves be subject to refinement, but they provide a stable basis for evaluation at any given time. Without standards, the distinction between refinement and complication becomes entirely subjective, and the framework is vulnerable to the whims of its most vocal advocates.</p>
+</section>
+</section>
+<section id="case-studies-frameworks-that-have-matured-gracefully" class="level2" data-number="19.7">
+<h2 data-number="19.7" class="anchored" data-anchor-id="case-studies-frameworks-that-have-matured-gracefully"><span class="header-section-number">19.7</span> Case Studies: Frameworks That Have Matured Gracefully</h2>
+<p>The principles of long-term refinement are best understood through examples. Let us examine several frameworks that have matured gracefully over decades, embodying the principles we have discussed.</p>
+<section id="common-law-jurisprudence" class="level3" data-number="19.7.1">
+<h3 data-number="19.7.1" class="anchored" data-anchor-id="common-law-jurisprudence"><span class="header-section-number">19.7.1</span> Common Law Jurisprudence</h3>
+<p>The common law system, as practiced in the United Kingdom, the United States, and other jurisdictions, is perhaps the most extended example of case-based structural refinement in human history. Over centuries, the common law has developed a sophisticated body of doctrine through the accumulation and analysis of individual cases.</p>
+<p>The common law’s refinement process has several key features. First, it is <strong>case-driven</strong>: each case presents a concrete situation that tests and extends existing doctrine. Second, it is <strong>precedent-based</strong>: past decisions guide future decisions through the principle of <em>stare decisis</em> (let the decision stand). Third, it is <strong>adversarial</strong>: competing interpretations are tested through argument before neutral judges. Fourth, it is <strong>transparent</strong>: judicial opinions explain the reasoning behind decisions, creating a rich archive of legal thought.</p>
+<p>The common law is not without flaws, but its longevity and adaptability demonstrate the power of case-based refinement. It has evolved from a small body of medieval customs into a comprehensive legal system capable of addressing the complexities of modern society, all while maintaining continuity with its origins.</p>
+</section>
+<section id="the-cmmi-framework" class="level3" data-number="19.7.2">
+<h3 data-number="19.7.2" class="anchored" data-anchor-id="the-cmmi-framework"><span class="header-section-number">19.7.2</span> The CMMI Framework</h3>
+<p>The Capability Maturity Model Integration (CMMI) framework for process improvement provides a different example of long-term refinement. Originally developed by the Software Engineering Institute at Carnegie Mellon University, CMMI has evolved through multiple versions over more than three decades.</p>
+<p>CMMI began as the Capability Maturity Model (CMM) for software development, focusing on helping organizations improve their software development processes. Through accumulated experience and feedback, it was refined into CMMI, which integrated multiple disciplines (software, systems, hardware, and services) into a unified framework. Later versions incorporated lessons from agile methods, lean thinking, and other emerging practices.</p>
+<p>CMMI’s refinement has not been uncontroversial. Critics have accused it of being overly bureaucratic and prescriptive. But its evolution demonstrates several principles of healthy refinement: responsiveness to feedback, integration of diverse perspectives, and willingness to revise core concepts based on experience. The framework that exists today is substantially different from the original CMM, yet it maintains continuity of purpose and identity.</p>
+</section>
+<section id="the-balanced-scorecard" class="level3" data-number="19.7.3">
+<h3 data-number="19.7.3" class="anchored" data-anchor-id="the-balanced-scorecard"><span class="header-section-number">19.7.3</span> The Balanced Scorecard</h3>
+<p>The Balanced Scorecard, introduced by Robert Kaplan and David Norton in 1992, has undergone substantial refinement over three decades. Initially conceived as a performance measurement framework that balanced financial and non-financial metrics, it evolved into a comprehensive strategic management system.</p>
+<p>Through the accumulation of cases, Kaplan and Norton identified patterns of successful and unsuccessful implementation. They refined the framework to include strategy mapping, strategic alignment, and the cascading of scorecards throughout organizations. They developed guidance for common implementation challenges. They incorporated insights from strategy execution, change management, and organizational development.</p>
+<p>The Balanced Scorecard’s evolution demonstrates how a framework can mature through the systematic study of its own use. Kaplan and Norton did not simply prescribe the framework and move on; they studied how it was being applied, what worked, and what needed improvement. Their ongoing research transformed a simple measurement concept into a rich management philosophy.</p>
+</section>
+<section id="the-togaf-standard" class="level3" data-number="19.7.4">
+<h3 data-number="19.7.4" class="anchored" data-anchor-id="the-togaf-standard"><span class="header-section-number">19.7.4</span> The TOGAF Standard</h3>
+<p>The Open Group Architecture Framework (TOGAF) provides a final example of architectural refinement. First developed in 1995, TOGAF has evolved through multiple versions to become one of the most widely adopted enterprise architecture frameworks.</p>
+<p>TOGAF’s refinement has been notable for its responsiveness to changes in the technology landscape. The framework has been updated to address cloud computing, service-oriented architecture, agile development practices, and digital transformation. Each version has reflected the evolving needs of the enterprise architecture community.</p>
+<p>TOGAF’s governance structure—managed by The Open Group, with contributions from member organizations around the world—provides a model for distributed structural refinement. The framework is not owned by any single organization but stewarded by a community. This governance structure has enabled TOGAF to evolve while maintaining coherence and broad acceptance.</p>
+</section>
+</section>
+<section id="the-qualities-of-graceful-maturation" class="level2" data-number="19.8">
+<h2 data-number="19.8" class="anchored" data-anchor-id="the-qualities-of-graceful-maturation"><span class="header-section-number">19.8</span> The Qualities of Graceful Maturation</h2>
+<p>What do these examples teach us about graceful maturation? Several patterns recur.</p>
+<p><strong>Continuity of purpose.</strong> All these frameworks maintained a clear sense of purpose even as their forms evolved. The common law serves justice; CMMI serves process improvement; the Balanced Scorecard serves strategic alignment; TOGAF serves enterprise architecture. This continuity of purpose provides a stable reference point for evaluating changes.</p>
+<p><strong>Responsiveness to experience.</strong> All these frameworks were shaped by accumulated experience. Their developers and stewards paid attention to how the frameworks were being used, what challenges users faced, and what adaptations were needed. This responsiveness kept the frameworks grounded in practice rather than floating away into abstraction.</p>
+<p><strong>Community governance.</strong> All these frameworks benefited from governance structures that enabled collective judgment. Revisions were not imposed autocratically but emerged from community processes—debate, peer review, consensus-building, and transparent decision-making.</p>
+<p><strong>Willingness to prune.</strong> All these frameworks demonstrated a willingness to let go of elements that had outlived their usefulness. They did not cling to every feature of their original designs but allowed the framework to be reshaped by experience.</p>
+<p><strong>Integration of new knowledge.</strong> All these frameworks found ways to integrate insights from outside their original domains. They were permeable to new ideas, new practices, and new evidence—while maintaining the coherence that made them valuable.</p>
+</section>
+<section id="conclusion-the-patience-of-refinement" class="level2" data-number="19.9">
+<h2 data-number="19.9" class="anchored" data-anchor-id="conclusion-the-patience-of-refinement"><span class="header-section-number">19.9</span> Conclusion: The Patience of Refinement</h2>
+<p>Long-term refinement is not a quick process. It requires patience, persistence, and the humility to learn from experience over years and decades. The frameworks that have matured most gracefully are those whose stewards understood that a living structure is not built in a day but grown through time.</p>
+<p>This patience is at odds with the acceleration of modern life. We want frameworks that are immediately useful and that remain useful without ongoing investment. We want solutions that are designed once and applied forever. But the frameworks that serve us best are those we commit to maintaining—tending to their categories, pruning their excesses, learning from their failures, and celebrating their growing wisdom.</p>
+<p>In the final chapter of this book, we bring together all the themes we have explored. We synthesize the Living Architecture Loop—a meta-framework for the ongoing practice of keeping structures alive.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2" data-number="19.10">
+<h2 data-number="19.10" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">19.10</span> Key Takeaways</h2>
+<ul>
+<li>Long-term refinement is the process by which a structure matures through accumulated experience, developing deeper categories, more articulated principles, and richer heuristics.</li>
+<li>Expert judgment—developed through practice and cultivated within communities—is essential for wise structural evolution.</li>
+<li>Case archives, pattern languages, and meta-learning are mechanisms for systematically learning from accumulated experience.</li>
+<li>The distinction between refinement and complication is critical: refinement makes a structure more effective; complication makes it more complex without adding commensurate value.</li>
+<li>Successful long-term refinement requires continuity of purpose, responsiveness to experience, community governance, willingness to prune, and integration of new knowledge.</li>
+<li>Frameworks that have matured gracefully—common law, CMMI, the Balanced Scorecard, TOGAF—demonstrate these principles in practice.</li>
+<li>Patience and sustained commitment are essential for the slow work of structural maturation.</li>
+</ul>
+<hr>
+</section>
+<section id="exercises-and-reflections" class="level2" data-number="19.11">
+<h2 data-number="19.11" class="anchored" data-anchor-id="exercises-and-reflections"><span class="header-section-number">19.11</span> Exercises and Reflections</h2>
+<ol type="1">
+<li><p><strong>Select a framework you have used for several years.</strong> What changes have you observed in it over that time? Which changes were genuine refinements, and which were complicating additions? What would you identify as the framework’s deepest insights—the ones that have remained stable through all its evolution?</p></li>
+<li><p><strong>Conduct a “pruning audit”</strong> on a framework you work with regularly. Identify at least three elements (categories, rules, practices) that could be removed or simplified without reducing the framework’s value. What would be gained by removing them? What resistance would you expect, and how would you address it?</p></li>
+<li><p><strong>Design a case-archive system</strong> for a framework you use or study. What information would each case record include? How would the archive be maintained and made accessible? How could practitioners search the archive for relevant precedents? How would the archive feed into the framework’s revision process? Consider what would make this archive a living resource rather than a static repository.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch16-living-structure.html" class="pagination-link" aria-label="Chapter 16 — Living Structure">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16 — Living Structure</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ch18-living-architecture-loop.html" class="pagination-link" aria-label="Chapter 18 — The Living Architecture Loop">
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

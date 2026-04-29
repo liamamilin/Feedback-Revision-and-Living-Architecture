@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>20&nbsp; Chapter 18 — The Living Architecture Loop – Feedback, Revision, and Living Architecture</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./summary.html" rel="next">
+<link href="./ch17-long-term-refinement.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch16-living-structure.html">Part VI — Living Architecture</a></li><li class="breadcrumb-item"><a href="./ch18-living-architecture-loop.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Feedback, Revision, and Living Architecture</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./table.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">How Structures Remain Open, Adaptive, and Real</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part I — Structure Meets Reality</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch01-from-map-to-use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Chapter 1 — From Map to Use</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch02-reality-feedback.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Chapter 2 — Reality Feedback</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch03-when-the-map-fails.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Chapter 3 — When the Map Fails</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part II — Failure, Drift, and Revision Signals</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch04-failure-signals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Chapter 4 — Failure Signals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch05-concept-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Chapter 5 — Concept Drift</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch06-structure-drift.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Chapter 6 — Structure Drift</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part III — Updating Models and Boundaries</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch07-model-update.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Chapter 7 — Model Update</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch08-boundary-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Chapter 8 — Boundary Revision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch09-category-and-layer-revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Chapter 9 — Category and Layer Revision</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part IV — Iteration and Versioning</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch10-iteration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Chapter 10 — Iteration</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch11-versioning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Chapter 11 — Versioning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch12-migration-between-versions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Chapter 12 — Migration Between Versions</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part V — Anti-Dogmatism</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch13-map-is-not-reality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Chapter 13 — Map Is Not Reality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch14-structure-as-hypothesis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Chapter 14 — Structure as Hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch15-avoiding-structural-tyranny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Chapter 15 — Avoiding Structural Tyranny</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
+ <span class="menu-text">Part VI — Living Architecture</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch16-living-structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Chapter 16 — Living Structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch17-long-term-refinement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch18-living-architecture-loop.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-a-book-in-motion" id="toc-introduction-a-book-in-motion" class="nav-link active" data-scroll-target="#introduction-a-book-in-motion"><span class="header-section-number">20.1</span> Introduction: A Book in Motion</a></li>
+  <li><a href="#the-living-architecture-loop-a-meta-framework" id="toc-the-living-architecture-loop-a-meta-framework" class="nav-link" data-scroll-target="#the-living-architecture-loop-a-meta-framework"><span class="header-section-number">20.2</span> The Living Architecture Loop: A Meta-Framework</a>
+  <ul class="collapse">
+  <li><a href="#phase-1-observe" id="toc-phase-1-observe" class="nav-link" data-scroll-target="#phase-1-observe"><span class="header-section-number">20.2.1</span> Phase 1: Observe</a></li>
+  <li><a href="#phase-2-structure" id="toc-phase-2-structure" class="nav-link" data-scroll-target="#phase-2-structure"><span class="header-section-number">20.2.2</span> Phase 2: Structure</a></li>
+  <li><a href="#phase-3-use" id="toc-phase-3-use" class="nav-link" data-scroll-target="#phase-3-use"><span class="header-section-number">20.2.3</span> Phase 3: Use</a></li>
+  <li><a href="#phase-4-evaluate" id="toc-phase-4-evaluate" class="nav-link" data-scroll-target="#phase-4-evaluate"><span class="header-section-number">20.2.4</span> Phase 4: Evaluate</a></li>
+  <li><a href="#phase-5-revise" id="toc-phase-5-revise" class="nav-link" data-scroll-target="#phase-5-revise"><span class="header-section-number">20.2.5</span> Phase 5: Revise</a></li>
+  <li><a href="#phase-6-continue" id="toc-phase-6-continue" class="nav-link" data-scroll-target="#phase-6-continue"><span class="header-section-number">20.2.6</span> Phase 6: Continue</a></li>
+  </ul></li>
+  <li><a href="#visualizing-the-loop" id="toc-visualizing-the-loop" class="nav-link" data-scroll-target="#visualizing-the-loop"><span class="header-section-number">20.3</span> Visualizing the Loop</a></li>
+  <li><a href="#the-recursive-nature-of-the-loop" id="toc-the-recursive-nature-of-the-loop" class="nav-link" data-scroll-target="#the-recursive-nature-of-the-loop"><span class="header-section-number">20.4</span> The Recursive Nature of the Loop</a></li>
+  <li><a href="#implementing-the-loop-in-practice" id="toc-implementing-the-loop-in-practice" class="nav-link" data-scroll-target="#implementing-the-loop-in-practice"><span class="header-section-number">20.5</span> Implementing the Loop in Practice</a>
+  <ul class="collapse">
+  <li><a href="#at-the-individual-level" id="toc-at-the-individual-level" class="nav-link" data-scroll-target="#at-the-individual-level"><span class="header-section-number">20.5.1</span> At the Individual Level</a></li>
+  <li><a href="#at-the-team-level" id="toc-at-the-team-level" class="nav-link" data-scroll-target="#at-the-team-level"><span class="header-section-number">20.5.2</span> At the Team Level</a></li>
+  <li><a href="#at-the-organizational-level" id="toc-at-the-organizational-level" class="nav-link" data-scroll-target="#at-the-organizational-level"><span class="header-section-number">20.5.3</span> At the Organizational Level</a></li>
+  <li><a href="#at-the-community-level" id="toc-at-the-community-level" class="nav-link" data-scroll-target="#at-the-community-level"><span class="header-section-number">20.5.4</span> At the Community Level</a></li>
+  </ul></li>
+  <li><a href="#obstacles-to-the-loop-and-how-to-overcome-them" id="toc-obstacles-to-the-loop-and-how-to-overcome-them" class="nav-link" data-scroll-target="#obstacles-to-the-loop-and-how-to-overcome-them"><span class="header-section-number">20.6</span> Obstacles to the Loop and How to Overcome Them</a>
+  <ul class="collapse">
+  <li><a href="#the-obstacle-of-complacency" id="toc-the-obstacle-of-complacency" class="nav-link" data-scroll-target="#the-obstacle-of-complacency"><span class="header-section-number">20.6.1</span> The Obstacle of Complacency</a></li>
+  <li><a href="#the-obstacle-of-inertia" id="toc-the-obstacle-of-inertia" class="nav-link" data-scroll-target="#the-obstacle-of-inertia"><span class="header-section-number">20.6.2</span> The Obstacle of Inertia</a></li>
+  <li><a href="#the-obstacle-of-expertise" id="toc-the-obstacle-of-expertise" class="nav-link" data-scroll-target="#the-obstacle-of-expertise"><span class="header-section-number">20.6.3</span> The Obstacle of Expertise</a></li>
+  <li><a href="#the-obstacle-of-pace" id="toc-the-obstacle-of-pace" class="nav-link" data-scroll-target="#the-obstacle-of-pace"><span class="header-section-number">20.6.4</span> The Obstacle of Pace</a></li>
+  </ul></li>
+  <li><a href="#the-loop-in-broader-context" id="toc-the-loop-in-broader-context" class="nav-link" data-scroll-target="#the-loop-in-broader-context"><span class="header-section-number">20.7</span> The Loop in Broader Context</a>
+  <ul class="collapse">
+  <li><a href="#the-loop-and-learning-organizations" id="toc-the-loop-and-learning-organizations" class="nav-link" data-scroll-target="#the-loop-and-learning-organizations"><span class="header-section-number">20.7.1</span> The Loop and Learning Organizations</a></li>
+  <li><a href="#the-loop-and-agile-practices" id="toc-the-loop-and-agile-practices" class="nav-link" data-scroll-target="#the-loop-and-agile-practices"><span class="header-section-number">20.7.2</span> The Loop and Agile Practices</a></li>
+  <li><a href="#the-loop-and-scientific-practice" id="toc-the-loop-and-scientific-practice" class="nav-link" data-scroll-target="#the-loop-and-scientific-practice"><span class="header-section-number">20.7.3</span> The Loop and Scientific Practice</a></li>
+  <li><a href="#the-loop-and-design-thinking" id="toc-the-loop-and-design-thinking" class="nav-link" data-scroll-target="#the-loop-and-design-thinking"><span class="header-section-number">20.7.4</span> The Loop and Design Thinking</a></li>
+  </ul></li>
+  <li><a href="#final-reflection-keeping-structures-open-to-reality" id="toc-final-reflection-keeping-structures-open-to-reality" class="nav-link" data-scroll-target="#final-reflection-keeping-structures-open-to-reality"><span class="header-section-number">20.8</span> Final Reflection: Keeping Structures Open to Reality</a>
+  <ul class="collapse">
+  <li><a href="#the-courage-to-revise" id="toc-the-courage-to-revise" class="nav-link" data-scroll-target="#the-courage-to-revise"><span class="header-section-number">20.8.1</span> The Courage to Revise</a></li>
+  <li><a href="#the-wisdom-to-preserve" id="toc-the-wisdom-to-preserve" class="nav-link" data-scroll-target="#the-wisdom-to-preserve"><span class="header-section-number">20.8.2</span> The Wisdom to Preserve</a></li>
+  <li><a href="#the-discipline-of-practice" id="toc-the-discipline-of-practice" class="nav-link" data-scroll-target="#the-discipline-of-practice"><span class="header-section-number">20.8.3</span> The Discipline of Practice</a></li>
+  <li><a href="#the-paradox-resolved" id="toc-the-paradox-resolved" class="nav-link" data-scroll-target="#the-paradox-resolved"><span class="header-section-number">20.8.4</span> The Paradox Resolved</a></li>
+  </ul></li>
+  <li><a href="#conclusion-the-open-architecture" id="toc-conclusion-the-open-architecture" class="nav-link" data-scroll-target="#conclusion-the-open-architecture"><span class="header-section-number">20.9</span> Conclusion: The Open Architecture</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">20.10</span> Key Takeaways</a></li>
+  <li><a href="#exercises-and-reflections" id="toc-exercises-and-reflections" class="nav-link" data-scroll-target="#exercises-and-reflections"><span class="header-section-number">20.11</span> Exercises and Reflections</a></li>
+  <li><a href="#book-conclusion-the-architecture-of-living-thought" id="toc-book-conclusion-the-architecture-of-living-thought" class="nav-link" data-scroll-target="#book-conclusion-the-architecture-of-living-thought"><span class="header-section-number">20.12</span> Book Conclusion: The Architecture of Living Thought</a></li>
+  <li><a href="#key-takeaways-book-level" id="toc-key-takeaways-book-level" class="nav-link" data-scroll-target="#key-takeaways-book-level"><span class="header-section-number">20.13</span> Key Takeaways (Book-Level)</a></li>
+  <li><a href="#exercises-and-reflections-book-level" id="toc-exercises-and-reflections-book-level" class="nav-link" data-scroll-target="#exercises-and-reflections-book-level"><span class="header-section-number">20.14</span> Exercises and Reflections (Book-Level)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch16-living-structure.html">Part VI — Living Architecture</a></li><li class="breadcrumb-item"><a href="./ch18-living-architecture-loop.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Chapter 18 — The Living Architecture Loop</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p><em>“We shall not cease from exploration, and the end of all our exploring will be to arrive where we started and know the place for the first time.”</em> — T. S. Eliot, <em>Little Gidding</em> (1942)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>“A structure that has learned to revise itself is no longer a tool; it has become a practice.”</em> — The Author</p>
+</blockquote>
+<hr>
+<section id="introduction-a-book-in-motion" class="level2" data-number="20.1">
+<h2 data-number="20.1" class="anchored" data-anchor-id="introduction-a-book-in-motion"><span class="header-section-number">20.1</span> Introduction: A Book in Motion</h2>
+<p>This book began with a simple observation: every structure—every framework, every architecture, every model, every taxonomy—exists in a relationship with reality. That relationship is dynamic. Reality changes. Structures drift. Models fail. Boundaries become outdated. Categories no longer fit. And yet, we cannot do without structure. To think, to organize, to build, to communicate—all require some form of structure, some arrangement of concepts and relationships that makes the world navigable.</p>
+<p>The central question of this book has been: <strong>How does a structure remain open to reality instead of becoming a dead framework or ideology?</strong></p>
+<p>We have approached this question from many angles. We examined how structures meet reality in the act of use (Chapter 1), how they absorb feedback (Chapter 2), and how they fail (Chapter 3). We explored the signals of failure—concept drift (Chapter 5), structure drift (Chapter 6)—and the practices of revision—model updating (Chapter 7), boundary revision (Chapter 8), category revision (Chapter 9). We considered the disciplines of iteration (Chapter 10), versioning (Chapter 11), and migration (Chapter 12). We confronted the dangers of dogmatism (Chapters 13, 14, and 15). And we examined what makes a structure living (Chapter 16) and how it matures through long-term refinement (Chapter 17).</p>
+<p>Now, in this final chapter, we bring these threads together into a coherent whole. We present the <strong>Living Architecture Loop</strong>—a meta-framework for the ongoing practice of keeping structures alive. We explore how to implement this loop in individual practice, organizational culture, and community governance. And we offer a final reflection on what it means to build structures that remain open to reality.</p>
+</section>
+<section id="the-living-architecture-loop-a-meta-framework" class="level2" data-number="20.2">
+<h2 data-number="20.2" class="anchored" data-anchor-id="the-living-architecture-loop-a-meta-framework"><span class="header-section-number">20.2</span> The Living Architecture Loop: A Meta-Framework</h2>
+<p>The Living Architecture Loop is a conceptual framework for the process of maintaining structural vitality. It is not a methodology to be applied mechanically but a pattern of practice to be adapted to context. It describes the ongoing cycle by which structures are created, used, evaluated, revised, and sustained.</p>
+<p>The loop has six phases:</p>
+<p><strong>Observe → Structure → Use → Evaluate → Revise → Continue</strong></p>
+<p>Each phase feeds into the next, and the loop as a whole is recursive—applicable to itself. Let us examine each phase in detail.</p>
+<section id="phase-1-observe" class="level3" data-number="20.2.1">
+<h3 data-number="20.2.1" class="anchored" data-anchor-id="phase-1-observe"><span class="header-section-number">20.2.1</span> Phase 1: Observe</h3>
+<p>The loop begins with observation. Before we can build or revise a structure, we must attend to the reality it is meant to organize. Observation is the foundation of structural vitality.</p>
+<p>Observation in this context means more than passive perception. It is <strong>active, structured attention</strong> to the domain. It involves:</p>
+<ul>
+<li><p><strong>Sensing the environment</strong>: What is happening in the domain? What patterns are emerging? What anomalies resist existing categories?</p></li>
+<li><p><strong>Identifying needs</strong>: What problems require structural solutions? What questions demand frameworks? What activities require organization?</p></li>
+<li><p><strong>Noticing drift</strong>: How has the domain changed since the last structural revision? What new phenomena have appeared? What old patterns have shifted?</p></li>
+<li><p><strong>Gathering feedback</strong>: What are users of existing structures experiencing? What difficulties do they encounter? What workarounds have they developed?</p></li>
+</ul>
+<p>Observation requires <strong>epistemic humility</strong>—the recognition that our existing categories may be filtering out important signals. It requires suspending the impulse to impose structure prematurely, allowing the phenomena to speak for themselves before being organized.</p>
+<p>This phase connects directly to the themes of Chapters 2 and 3. Feedback (Chapter 2) is the raw material of observation. Failure signals (Chapter 3) are the most important observations we can make—indicators that our structures are no longer aligned with reality.</p>
+</section>
+<section id="phase-2-structure" class="level3" data-number="20.2.2">
+<h3 data-number="20.2.2" class="anchored" data-anchor-id="phase-2-structure"><span class="header-section-number">20.2.2</span> Phase 2: Structure</h3>
+<p>Once we have observed the domain, we must impose structure—organize phenomena into categories, relationships, and principles. This is the creative act of framework design.</p>
+<p>Structuring involves:</p>
+<ul>
+<li><p><strong>Identifying relevant dimensions</strong>: What attributes of the phenomena matter for the purposes at hand?</p></li>
+<li><p><strong>Defining categories</strong>: What groupings of phenomena are natural and useful? What are the boundaries between categories?</p></li>
+<li><p><strong>Articulating relationships</strong>: How do the categories relate to one another? What dependencies, hierarchies, and interactions exist?</p></li>
+<li><p><strong>Formulating principles</strong>: What general rules or guidelines govern the structure? What assumptions does it rest on?</p></li>
+<li><p><strong>Documenting the design</strong>: What is the rationale for the chosen structure? What alternatives were considered? What are the expected limits of applicability?</p></li>
+</ul>
+<p>The structuring phase must be conducted with <strong>provisionality</strong>—an awareness that the emerging structure is a hypothesis, not a final truth. It must be designed for revisability, incorporating the modularity, transparency, and permeability discussed in Chapter 16.</p>
+<p>This phase draws on the insights of Chapters 1 and 4. The act of structuring is the act of creating a map (Chapter 1). The failure signals we have observed (Chapter 4) should inform the design, highlighting areas where previous structures have failed.</p>
+</section>
+<section id="phase-3-use" class="level3" data-number="20.2.3">
+<h3 data-number="20.2.3" class="anchored" data-anchor-id="phase-3-use"><span class="header-section-number">20.2.3</span> Phase 3: Use</h3>
+<p>A structure that has never been used is not yet fully a structure. Use is the crucible in which frameworks are tested, the forge in which they are shaped by contact with reality.</p>
+<p>Using a structure involves:</p>
+<ul>
+<li><p><strong>Applying categories</strong>: Classifying phenomena using the framework’s categories, noting where they fit and where they resist.</p></li>
+<li><p><strong>Following principles</strong>: Applying the framework’s principles to concrete decisions, observing where they guide effectively and where they lead astray.</p></li>
+<li><p><strong>Navigating ambiguity</strong>: Exercising judgment in situations where the framework’s guidance is indeterminate, developing local interpretations.</p></li>
+<li><p><strong>Accumulating cases</strong>: Building a body of experience that enriches the framework’s empirical foundation.</p></li>
+</ul>
+<p>The use phase is where the gap between theory and practice becomes visible. It is where the framework’s assumptions are tested, its blind spots revealed, and its limits exposed. Use without reflection is mere habit. Use with reflection is learning.</p>
+<p>This phase is the focus of Chapter 1 (From Map to Use) and Chapter 2 (Reality Feedback). The act of use transforms the structure, and that transformation is the engine of the Living Architecture Loop.</p>
+</section>
+<section id="phase-4-evaluate" class="level3" data-number="20.2.4">
+<h3 data-number="20.2.4" class="anchored" data-anchor-id="phase-4-evaluate"><span class="header-section-number">20.2.4</span> Phase 4: Evaluate</h3>
+<p>Not every use yields insight. Evaluation is the deliberate, systematic assessment of a structure’s performance in practice.</p>
+<p>Evaluation involves:</p>
+<ul>
+<li><p><strong>Measuring outcomes</strong>: What results did the structure produce? Were they the expected results? If not, what accounts for the discrepancy?</p></li>
+<li><p><strong>Assessing fit</strong>: How well did the structure’s categories and principles align with the reality of the domain? Where was the fit tight? Where was it loose?</p></li>
+<li><p><strong>Identifying anomalies</strong>: What cases did the structure handle poorly? What phenomena fell through its cracks? What exceptions challenged its categories?</p></li>
+<li><p><strong>Collecting feedback</strong>: What do users report about their experience with the structure? What do they find helpful? What do they find frustrating? What adaptations have they made?</p></li>
+<li><p><strong>Analyzing drift</strong>: How has the domain changed since the structure was designed? Have new phenomena emerged? Have old distinctions become obsolete?</p></li>
+</ul>
+<p>Evaluation requires <strong>honesty</strong>—the willingness to confront evidence that challenges the structure. It requires creating mechanisms that make evaluation routine rather than exceptional. It requires metrics that are objective enough to be trusted but flexible enough to capture qualitative insights.</p>
+<p>This phase connects to Chapters 4, 5, and 6. The signals of concept drift (Chapter 5) and structure drift (Chapter 6) are the key findings of evaluation. The detection mechanisms discussed in Chapter 4 are the infrastructure that makes evaluation possible.</p>
+</section>
+<section id="phase-5-revise" class="level3" data-number="20.2.5">
+<h3 data-number="20.2.5" class="anchored" data-anchor-id="phase-5-revise"><span class="header-section-number">20.2.5</span> Phase 5: Revise</h3>
+<p>Evaluation that does not lead to revision is performative. The revision phase is where insights from evaluation are translated into structural change.</p>
+<p>Revision involves:</p>
+<ul>
+<li><p><strong>Diagnosing root causes</strong>: What, precisely, is failing? Is it a specific category? A relationship? A fundamental assumption? The diagnosis determines the scope of revision required.</p></li>
+<li><p><strong>Designing changes</strong>: What modifications would address the identified problems? Should categories be added, removed, or redefined? Should relationships be restructured? Should principles be qualified or replaced?</p></li>
+<li><p><strong>Assessing impact</strong>: What are the likely effects of the proposed changes? Will they improve performance without introducing new problems? Will they maintain compatibility with existing usage?</p></li>
+<li><p><strong>Implementing revisions</strong>: How will the changes be encoded in the structure’s formal representation? How will they be communicated to users? How will migration be managed?</p></li>
+<li><p><strong>Documenting the revision</strong>: What was changed, why, and with what expected consequences? What alternatives were considered? What open questions remain?</p></li>
+</ul>
+<p>Revision must be <strong>proportional</strong> to the problem it addresses. Small problems should prompt small revisions. Fundamental problems may require fundamental revisions. Over-revision is as dangerous as under-revision—it erodes stability without commensurate benefit.</p>
+<p>The revision phase is the heart of the Living Architecture Loop. It is where the structure is updated (Chapter 7), its boundaries revised (Chapter 8), its categories reorganized (Chapter 9), its versions managed (Chapter 11), and its migrations executed (Chapter 12).</p>
+</section>
+<section id="phase-6-continue" class="level3" data-number="20.2.6">
+<h3 data-number="20.2.6" class="anchored" data-anchor-id="phase-6-continue"><span class="header-section-number">20.2.6</span> Phase 6: Continue</h3>
+<p>The completion of a revision is not the end of the process. It is the transition to the next iteration. The “Continue” phase is the commitment to ongoing engagement—to maintaining the structure, monitoring its performance, and remaining open to future cycles of observation, use, evaluation, and revision.</p>
+<p>Continuing involves:</p>
+<ul>
+<li><p><strong>Sustaining attention</strong>: Maintaining the infrastructure and habits that support the loop—observation channels, feedback mechanisms, review cycles, governance processes.</p></li>
+<li><p><strong>Preserving history</strong>: Archiving past versions, revisions, and rationales as resources for future learning (as discussed in Chapter 17).</p></li>
+<li><p><strong>Cultivating community</strong>: Nurturing the community of practice that stewards the structure, developing new practitioners, and preserving collective wisdom.</p></li>
+<li><p><strong>Maintaining vigilance</strong>: Remaining alert to the signs that another cycle of revision may be needed—new anomalies, changing conditions, emerging challenges.</p></li>
+<li><p><strong>Embracing iteration</strong>: Recognizing that the Living Architecture Loop is never complete. A living structure is always in some phase of the cycle.</p></li>
+</ul>
+<p>The “Continue” phase embodies the ethos of iteration (Chapter 10) and long-term refinement (Chapter 17). It is the recognition that living structure is not a state but a practice—something we do, not something we have.</p>
+</section>
+</section>
+<section id="visualizing-the-loop" class="level2" data-number="20.3">
+<h2 data-number="20.3" class="anchored" data-anchor-id="visualizing-the-loop"><span class="header-section-number">20.3</span> Visualizing the Loop</h2>
+<p>The Living Architecture Loop can be visualized as a continuous cycle:</p>
+<pre><code>                    OBSERVE
+                       ↓
+                    STRUCTURE
+                       ↓
+                       USE
+                       ↓
+                    EVALUATE
+                       ↓
+                     REVISE
+                       ↓
+                    CONTINUE ──→ (back to OBSERVE)</code></pre>
+<p>But a linear cycle is too simple. The loop is better understood as a <strong>spiral</strong> that moves through time. Each iteration of the loop builds on the previous one. The structure is not returned to its starting point but advanced to a new state. Understanding accumulates. Categories deepen. The structure matures.</p>
+<p>Furthermore, the loop operates at <strong>multiple timescales</strong>. There are micro-loops—brief cycles of observation, use, and adjustment that occur in the course of a single application. There are meso-loops—periodic reviews that produce systematic revisions. And there are macro-loops—fundamental reconceptualizations that transform the structure’s core. A living structure supports loops at all these timescales.</p>
+</section>
+<section id="the-recursive-nature-of-the-loop" class="level2" data-number="20.4">
+<h2 data-number="20.4" class="anchored" data-anchor-id="the-recursive-nature-of-the-loop"><span class="header-section-number">20.4</span> The Recursive Nature of the Loop</h2>
+<p>One of the most important properties of the Living Architecture Loop is its <strong>recursivity</strong>: the loop applies to itself. We can observe our structural practices, structure them, use them, evaluate them, and revise them. The meta-framework is itself a structure that must remain alive.</p>
+<p>This recursivity prevents the Living Architecture Loop from becoming another dead framework. If we treat the loop as a fixed methodology to be applied without question, we have betrayed its spirit. The loop is a pattern of practice, not a prescription. It is a guide to staying alive, not a set of rules that defines life.</p>
+<p>The practical implication is that communities using the Living Architecture Loop should periodically step back and evaluate the loop itself. Is it serving its purpose? Are the phases appropriately defined? Are there gaps or overlaps? Does the loop need revision? This meta-reflection ensures that the framework for keeping structures alive remains alive itself.</p>
+</section>
+<section id="implementing-the-loop-in-practice" class="level2" data-number="20.5">
+<h2 data-number="20.5" class="anchored" data-anchor-id="implementing-the-loop-in-practice"><span class="header-section-number">20.5</span> Implementing the Loop in Practice</h2>
+<p>How can the Living Architecture Loop be implemented in real contexts? The implementation depends on the nature of the structure and the community that stewards it. But some general guidance applies.</p>
+<section id="at-the-individual-level" class="level3" data-number="20.5.1">
+<h3 data-number="20.5.1" class="anchored" data-anchor-id="at-the-individual-level"><span class="header-section-number">20.5.1</span> At the Individual Level</h3>
+<p>Individuals who use conceptual frameworks—researchers, practitioners, designers, managers—can adopt the Living Architecture Loop as a personal practice. This involves:</p>
+<p><strong>Keeping a practice journal.</strong> Document observations, applications, evaluations, and revisions of the frameworks you use. This journal becomes your personal case archive, supporting reflection and learning over time.</p>
+<p><strong>Scheduling regular reviews.</strong> Set aside time—weekly, monthly, quarterly—to review your structural practices. What frameworks are you using? How are they performing? What needs revision?</p>
+<p><strong>Cultivating multiple frameworks.</strong> Maintain fluency in multiple frameworks for the same domain. This prevents over-attachment to any single structure and provides alternative perspectives when a framework falters.</p>
+<p><strong>Embracing provisionality.</strong> Hold your frameworks as working hypotheses. Be prepared to revise or abandon them as evidence accumulates. Your relationship to a structure should be one of use, not identity.</p>
+</section>
+<section id="at-the-team-level" class="level3" data-number="20.5.2">
+<h3 data-number="20.5.2" class="anchored" data-anchor-id="at-the-team-level"><span class="header-section-number">20.5.2</span> At the Team Level</h3>
+<p>Teams that collaborate around shared structures—development methodologies, design systems, project management frameworks—can implement the loop as a team practice.</p>
+<p><strong>Establish feedback channels.</strong> Create mechanisms for team members to report observations about structural performance. This might include retrospection sessions, anonymous feedback systems, or dedicated communication channels.</p>
+<p><strong>Assign governance roles.</strong> Designate individuals or groups with responsibility for maintaining the team’s shared structures. These stewards oversee the observation, evaluation, and revision processes.</p>
+<p><strong>Conduct regular structural reviews.</strong> Schedule periodic reviews of the team’s frameworks and methodologies. What is working? What is not? What should change? These reviews should be safe spaces for honest critique.</p>
+<p><strong>Document and share.</strong> Maintain records of the team’s structural practices, the rationale behind them, and the history of revisions. This documentation supports continuity and learning when team members change.</p>
+</section>
+<section id="at-the-organizational-level" class="level3" data-number="20.5.3">
+<h3 data-number="20.5.3" class="anchored" data-anchor-id="at-the-organizational-level"><span class="header-section-number">20.5.3</span> At the Organizational Level</h3>
+<p>Organizations that operate with significant structural investments—enterprise architectures, strategic models, operational frameworks—require more formal implementations of the loop.</p>
+<p><strong>Create architecture governance.</strong> Establish formal governance processes for the organization’s conceptual and technical architectures. Define roles, responsibilities, and decision rights for structural evolution.</p>
+<p><strong>Build evaluation infrastructure.</strong> Invest in systems for monitoring structural performance—metrics, dashboards, feedback systems, and review mechanisms. The infrastructure should make evaluation routine and systematic.</p>
+<p><strong>Support migration.</strong> Recognize that structural revisions impose transition costs on the organization. Provide training, documentation, and support for migrating from old structures to new ones (as discussed in Chapter 12).</p>
+<p><strong>Foster a learning culture.</strong> Cultivate organizational norms that value structural vitality over structural stability. Reward those who identify problems and propose improvements. Treat structural revision as a sign of health, not weakness.</p>
+</section>
+<section id="at-the-community-level" class="level3" data-number="20.5.4">
+<h3 data-number="20.5.4" class="anchored" data-anchor-id="at-the-community-level"><span class="header-section-number">20.5.4</span> At the Community Level</h3>
+<p>Communities of practice that steward shared frameworks—open-source projects, professional associations, academic disciplines—face the most complex implementation challenges because they lack formal authority structures.</p>
+<p><strong>Develop community governance.</strong> Establish transparent, inclusive processes for proposing, debating, and implementing structural changes. These processes must be perceived as legitimate by the community.</p>
+<p><strong>Maintain shared repositories.</strong> Create and maintain archives of the framework’s structure, its case library, its revision history, and its governance documentation. These repositories are the community’s collective memory.</p>
+<p><strong>Nurture contributor pipelines.</strong> Develop paths for new members to become contributors to the framework’s evolution. This ensures that the community’s stewardship capacity grows over time.</p>
+<p><strong>Balance stability and change.</strong> Communities are often polarized between those who prioritize stability and those who advocate change. Effective governance finds ways to honor both perspectives, enabling evolution without disruption.</p>
+</section>
+</section>
+<section id="obstacles-to-the-loop-and-how-to-overcome-them" class="level2" data-number="20.6">
+<h2 data-number="20.6" class="anchored" data-anchor-id="obstacles-to-the-loop-and-how-to-overcome-them"><span class="header-section-number">20.6</span> Obstacles to the Loop and How to Overcome Them</h2>
+<p>Implementing the Living Architecture Loop is not easy. Several obstacles commonly arise.</p>
+<section id="the-obstacle-of-complacency" class="level3" data-number="20.6.1">
+<h3 data-number="20.6.1" class="anchored" data-anchor-id="the-obstacle-of-complacency"><span class="header-section-number">20.6.1</span> The Obstacle of Complacency</h3>
+<p>The most common obstacle is complacency: the belief that existing structures are good enough and do not require ongoing attention. Complacency is the enemy of vitality.</p>
+<p><strong>Overcoming complacency</strong> requires cultivating a sense of productive dissatisfaction—a recognition that every structure, no matter how good, can be improved. It requires making evaluation routine rather than exceptional. And it requires celebrating revisions as signs of health, not signs of failure.</p>
+</section>
+<section id="the-obstacle-of-inertia" class="level3" data-number="20.6.2">
+<h3 data-number="20.6.2" class="anchored" data-anchor-id="the-obstacle-of-inertia"><span class="header-section-number">20.6.2</span> The Obstacle of Inertia</h3>
+<p>The second obstacle is organizational inertia: the accumulated habits, investments, and power structures that resist change even when it is recognized as necessary.</p>
+<p><strong>Overcoming inertia</strong> requires building revision mechanisms that are low-friction and high-legitimacy. It requires creating pressure for change—through external benchmarks, user feedback, or competitive dynamics. And it requires leadership that models the willingness to revise.</p>
+</section>
+<section id="the-obstacle-of-expertise" class="level3" data-number="20.6.3">
+<h3 data-number="20.6.3" class="anchored" data-anchor-id="the-obstacle-of-expertise"><span class="header-section-number">20.6.3</span> The Obstacle of Expertise</h3>
+<p>The third obstacle is the entrenchment of expertise: the tendency of those who have mastered a framework to resist changes that would devalue their expertise.</p>
+<p><strong>Overcoming expertise entrenchment</strong> requires creating a culture where expertise is valued for its contribution to structural evolution, not for its mastery of current structures. It requires rewarding those who help the framework improve, not just those who apply it skillfully. And it requires mechanisms that allow new voices—especially those of newcomers and outsiders—to be heard in revision processes.</p>
+</section>
+<section id="the-obstacle-of-pace" class="level3" data-number="20.6.4">
+<h3 data-number="20.6.4" class="anchored" data-anchor-id="the-obstacle-of-pace"><span class="header-section-number">20.6.4</span> The Obstacle of Pace</h3>
+<p>The fourth obstacle is the challenge of pace. Structures can be revised too slowly (leading to stagnation) or too frequently (leading to instability). Finding the right pace is difficult.</p>
+<p><strong>Overcoming pace challenges</strong> requires distinguishing between different types of revision (minor adjustments, periodic updates, fundamental reconceptualizations) and applying appropriate cadences to each. It requires clear criteria for when unscheduled revisions are warranted. And it requires communication that helps users understand the rhythm of change.</p>
+</section>
+</section>
+<section id="the-loop-in-broader-context" class="level2" data-number="20.7">
+<h2 data-number="20.7" class="anchored" data-anchor-id="the-loop-in-broader-context"><span class="header-section-number">20.7</span> The Loop in Broader Context</h2>
+<p>The Living Architecture Loop does not exist in isolation. It is embedded in broader systems of practice, culture, and value.</p>
+<section id="the-loop-and-learning-organizations" class="level3" data-number="20.7.1">
+<h3 data-number="20.7.1" class="anchored" data-anchor-id="the-loop-and-learning-organizations"><span class="header-section-number">20.7.1</span> The Loop and Learning Organizations</h3>
+<p>The Living Architecture Loop is closely related to the concept of the <strong>learning organization</strong> as articulated by Peter Senge and others. A learning organization is one that systematically develops its capacity to learn, adapt, and change. The loop provides a concrete process for organizational learning applied to the structures that organize organizational life <span class="citation" data-cites="senge1990">(<a href="references.html#ref-senge1990" role="doc-biblioref"><strong>senge1990?</strong></a>)</span>.</p>
+<p>Organizations that implement the loop become better at detecting discrepancies between their models and reality, better at revising their models in light of feedback, and better at preserving the learning that accumulates through this process. The loop is the engine of organizational learning applied to organizational structure.</p>
+</section>
+<section id="the-loop-and-agile-practices" class="level3" data-number="20.7.2">
+<h3 data-number="20.7.2" class="anchored" data-anchor-id="the-loop-and-agile-practices"><span class="header-section-number">20.7.2</span> The Loop and Agile Practices</h3>
+<p>The Living Architecture Loop shares deep affinities with agile software development practices. The agile emphasis on <strong>iterative development, continuous feedback, and retrospective reflection</strong> aligns with the loop’s phases of iteration, use, evaluation, and revision.</p>
+<p>But the loop extends beyond software development. It applies to any domain where structures are used to organize thought and action. The agile principles, originally articulated for software, turn out to be general principles for maintaining structural vitality across domains.</p>
+</section>
+<section id="the-loop-and-scientific-practice" class="level3" data-number="20.7.3">
+<h3 data-number="20.7.3" class="anchored" data-anchor-id="the-loop-and-scientific-practice"><span class="header-section-number">20.7.3</span> The Loop and Scientific Practice</h3>
+<p>The Living Architecture Loop also mirrors the structure of scientific practice. Science, at its best, is a process of observation (data collection), structuring (hypothesis formation), use (testing through experiment), evaluation (analysis of results), revision (modification of theories), and continuation (further investigation).</p>
+<p>This parallel is not coincidental. The scientific method is the most successful example we have of a systematic process for keeping conceptual structures accountable to reality. The Living Architecture Loop can be understood as an application of the scientific attitude to all forms of conceptual and organizational structure.</p>
+</section>
+<section id="the-loop-and-design-thinking" class="level3" data-number="20.7.4">
+<h3 data-number="20.7.4" class="anchored" data-anchor-id="the-loop-and-design-thinking"><span class="header-section-number">20.7.4</span> The Loop and Design Thinking</h3>
+<p>Design thinking, with its emphasis on empathy, ideation, prototyping, testing, and iteration, provides another parallel. The design process moves from observation of user needs, through structuring of design concepts, to use through prototyping, evaluation through testing, and revision through iteration.</p>
+<p>The Living Architecture Loop generalizes this process beyond product and service design to the design of any conceptual or organizational structure. It is design thinking applied to the structures that enable thinking itself.</p>
+</section>
+</section>
+<section id="final-reflection-keeping-structures-open-to-reality" class="level2" data-number="20.8">
+<h2 data-number="20.8" class="anchored" data-anchor-id="final-reflection-keeping-structures-open-to-reality"><span class="header-section-number">20.8</span> Final Reflection: Keeping Structures Open to Reality</h2>
+<p>We return, at last, to the core question of this book: <strong>How does a structure remain open to reality instead of becoming a dead framework or ideology?</strong></p>
+<p>The answer, developed over eighteen chapters, is this: <strong>A structure remains open to reality through a continuous practice of observation, use, evaluation, and revision, embedded in a community that values vitality over rigidity, learning over certainty, and adaptation over preservation.</strong></p>
+<p>This is not a simple answer. It does not reduce to a formula or a methodology. It is a way of being in relationship with the structures we create and use. It requires intellectual humility, emotional maturity, organizational discipline, and sustained commitment.</p>
+<section id="the-courage-to-revise" class="level3" data-number="20.8.1">
+<h3 data-number="20.8.1" class="anchored" data-anchor-id="the-courage-to-revise"><span class="header-section-number">20.8.1</span> The Courage to Revise</h3>
+<p>Keeping structures open to reality requires courage. It requires the willingness to admit that our frameworks are failing, that our categories are inadequate, that our principles no longer serve. It requires the willingness to challenge authority—including our own authority—when it is used to protect structures from correction.</p>
+<p>It requires the courage to let go of frameworks we have invested in, to abandon structures that have served us in the past but no longer serve us in the present. It requires the courage to embrace provisionality and uncertainty, to live without the comfort of final answers.</p>
+</section>
+<section id="the-wisdom-to-preserve" class="level3" data-number="20.8.2">
+<h3 data-number="20.8.2" class="anchored" data-anchor-id="the-wisdom-to-preserve"><span class="header-section-number">20.8.2</span> The Wisdom to Preserve</h3>
+<p>But keeping structures open to reality also requires wisdom. It requires the wisdom to recognize when a structure is not failing but being misapplied. It requires the wisdom to distinguish between a framework that needs revision and one that needs faithful application. It requires the wisdom to know when the cost of revision outweighs the benefit, when stability is more valuable than change.</p>
+<p>It requires the wisdom to preserve what is valuable in our traditions even as we revise them, to maintain continuity even as we evolve, to honor the past without being bound by it. This wisdom is not automatic; it is developed through experience, reflection, and the cultivation of good judgment within communities of practice.</p>
+</section>
+<section id="the-discipline-of-practice" class="level3" data-number="20.8.3">
+<h3 data-number="20.8.3" class="anchored" data-anchor-id="the-discipline-of-practice"><span class="header-section-number">20.8.3</span> The Discipline of Practice</h3>
+<p>Above all, keeping structures open to reality requires discipline—the discipline of ongoing practice. The Living Architecture Loop is not a one-time intervention but a continuous commitment. It is a practice to be maintained through time, through success and failure, through periods of stability and periods of upheaval.</p>
+<p>The discipline of practice means showing up for the loop again and again. It means observing when it would be easier to look away. It means evaluating when it would be easier to assume everything is fine. It means revising when it would be easier to maintain the status quo. It means continuing when it would be easier to declare the work complete.</p>
+</section>
+<section id="the-paradox-resolved" class="level3" data-number="20.8.4">
+<h3 data-number="20.8.4" class="anchored" data-anchor-id="the-paradox-resolved"><span class="header-section-number">20.8.4</span> The Paradox Resolved</h3>
+<p>We began this book with the paradox of structure: that we cannot live without it, but it can become a prison. The Living Architecture Loop resolves this paradox not by eliminating structure but by transforming our relationship with it.</p>
+<p>A structure that participates in the Living Architecture Loop is not a prison. It is a living partner in our engagement with reality—a tool that grows more useful through use, a guide that learns from its mistakes, a map that is revised as the territory changes.</p>
+<p>Such a structure is not merely a framework but a <strong>practice</strong>. It is not something we have but something we do. It is not a destination but a way of traveling.</p>
+</section>
+</section>
+<section id="conclusion-the-open-architecture" class="level2" data-number="20.9">
+<h2 data-number="20.9" class="anchored" data-anchor-id="conclusion-the-open-architecture"><span class="header-section-number">20.9</span> Conclusion: The Open Architecture</h2>
+<p>As we close this book, let us consider what it means to build an <strong>open architecture</strong>—not open in the technical sense of open-source software, but open in the existential sense of remaining permeable to reality.</p>
+<p>An open architecture has boundaries that are clear but negotiable. It has categories that are precise but revisable. It has principles that are firm but qualified. It has a core that is stable but not immutable. It has a community that is committed but not dogmatic.</p>
+<p>An open architecture is not a finished product but an ongoing invitation—an invitation to engage, to question, to test, to revise. It is a structure that says to its users: “Use me, but do not trust me blindly. Test me against your experience. Tell me when I fail. Help me improve.”</p>
+<p>This is the kind of architecture we need for the complex, uncertain, rapidly changing world we inhabit. We need structures that are stable enough to guide us but flexible enough to grow with us. We need frameworks that are rigorous enough to be useful but humble enough to learn. We need maps that are detailed enough to navigate by but open enough to be redrawn.</p>
+<p>This is the living architecture. It is not a dream of perfect structure but a practice of ongoing structuring. It is not a final answer but a continuous question. It is not a destination but a way of traveling—together, with eyes open, maps in hand, ready to revise.</p>
+<hr>
+</section>
+<section id="key-takeaways" class="level2" data-number="20.10">
+<h2 data-number="20.10" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">20.10</span> Key Takeaways</h2>
+<ul>
+<li>The Living Architecture Loop is a meta-framework for maintaining structural vitality: Observe → Structure → Use → Evaluate → Revise → Continue.</li>
+<li>The loop is recursive: it applies to itself, preventing it from becoming a dead framework.</li>
+<li>Implementation varies by scale—individual practice, team practice, organizational governance, and community stewardship each require different approaches.</li>
+<li>Common obstacles include complacency, inertia, expertise entrenchment, and pace challenges; each can be overcome with appropriate practices and norms.</li>
+<li>The loop aligns with and extends concepts from learning organizations, agile practices, scientific method, and design thinking.</li>
+<li>Keeping structures open to reality requires courage (to revise), wisdom (to preserve), and discipline (to practice).</li>
+<li>An open architecture is not a finished product but an ongoing invitation to engage, test, and improve.</li>
+</ul>
+<hr>
+</section>
+<section id="exercises-and-reflections" class="level2" data-number="20.11">
+<h2 data-number="20.11" class="anchored" data-anchor-id="exercises-and-reflections"><span class="header-section-number">20.11</span> Exercises and Reflections</h2>
+<ol type="1">
+<li><p><strong>Map your own structural practices onto the Living Architecture Loop.</strong> Identify a framework, methodology, or structure you use regularly. Walk through each phase of the loop: How do you observe the domain? How do you structure it? How do you use the structure? How do you evaluate its performance? How do you revise it? How do you continue the practice? Where are the gaps in your loop, and what would it take to close them?</p></li>
+<li><p><strong>Conduct a meta-reflection on the Living Architecture Loop itself.</strong> Consider the loop as a structure for maintaining structural vitality. Where does it succeed? Where does it fall short? What revisions would you propose? How would you keep the loop itself alive? This exercise asks you to apply the loop’s recursive nature—using the loop to evaluate and revise the loop.</p></li>
+<li><p><strong>Write a letter to a future steward of a structure you care about.</strong> Imagine that you will pass responsibility for a framework, methodology, or architecture to someone else. What would you want them to know about keeping it alive? What advice would you give them about the challenges they will face? What warnings would you offer? What encouragement? This exercise asks you to articulate the practice of living architecture as a commitment to be handed across generations.</p></li>
+</ol>
+<hr>
+</section>
+<section id="book-conclusion-the-architecture-of-living-thought" class="level2" data-number="20.12">
+<h2 data-number="20.12" class="anchored" data-anchor-id="book-conclusion-the-architecture-of-living-thought"><span class="header-section-number">20.12</span> Book Conclusion: The Architecture of Living Thought</h2>
+<p>We have traveled far in this book. We began with the simple recognition that structures are maps of territory, and that no map is the territory. We examined how structures meet reality through use, how they absorb feedback, how they fail. We explored the subtle signs of drift in concepts and in structures. We developed practices of updating, revising boundaries, and rethinking categories. We learned the disciplines of iteration, versioning, and migration. We confronted the dangers of dogmatism and the pathology of structural tyranny. We discovered what makes a structure living and how it matures through long-term refinement. And we have now synthesized these insights into the Living Architecture Loop.</p>
+<p>The arc of this book has been from <strong>structure as artifact</strong> to <strong>structure as practice</strong>. A structure that is treated as an artifact—a finished product to be designed, documented, and deployed—will inevitably decay. A structure that is treated as a practice—an ongoing activity of observation, structuring, use, evaluation, and revision—can remain alive indefinitely.</p>
+<p>This is the fundamental insight of this book: <strong>Life is not a property of structures but a relationship with them.</strong> A structure does not become living automatically. It becomes living through the active, sustained, reflective engagement of the people who use it and the communities that steward it.</p>
+<p>The challenge of our time is that we need structures more than ever, yet we are surrounded by structures that have become dead—rigid methodologies, frozen ideologies, bureaucratic systems, and dogmatic frameworks. The cost of this deadness is immense: failed projects, missed opportunities, suppressed innovation, and human suffering.</p>
+<p>The alternative is not to abandon structure—that is neither possible nor desirable. The alternative is to develop a different relationship with structure: one of creative engagement rather than passive acceptance, of provisional commitment rather than permanent allegiance, of loving criticism rather than unquestioning loyalty.</p>
+<p>This is the architecture of living thought—structures that are designed not to last forever but to remain alive through time. Structures that are strong enough to rely on but flexible enough to revise. Structures that serve human purposes without enslaving human judgment.</p>
+<p>This is the work before us. May we approach it with humility, courage, and the unwavering commitment to keep our maps open to the territories they represent.</p>
+<p><em>— End of Volume VIII —</em></p>
+<hr>
+</section>
+<section id="key-takeaways-book-level" class="level2" data-number="20.13">
+<h2 data-number="20.13" class="anchored" data-anchor-id="key-takeaways-book-level"><span class="header-section-number">20.13</span> Key Takeaways (Book-Level)</h2>
+<ul>
+<li>Every structure is a map of territory, and every map is a simplification that must remain open to revision.</li>
+<li>Feedback from reality is the lifeblood of structural vitality; without it, structures drift into irrelevance.</li>
+<li>Failure is not the enemy of structure but its most important teacher.</li>
+<li>Revision is not a sign of weakness but the primary mechanism of structural health.</li>
+<li>The disciplines of iteration, versioning, and migration are the practical infrastructure of structural evolution.</li>
+<li>The greatest danger to structure is not chaos but dogma—the refusal to revise in the face of contrary evidence.</li>
+<li>A living structure is not a fixed framework but an ongoing practice of observation, organization, use, evaluation, and revision.</li>
+<li>Long-term refinement transforms good frameworks into great ones through accumulated experience and collective judgment.</li>
+<li>The Living Architecture Loop provides a meta-framework for maintaining structural vitality across scales and domains.</li>
+<li>Ultimately, keeping structures open to reality is not a technical skill but a human practice requiring courage, wisdom, and discipline.</li>
+</ul>
+<hr>
+</section>
+<section id="exercises-and-reflections-book-level" class="level2" data-number="20.14">
+<h2 data-number="20.14" class="anchored" data-anchor-id="exercises-and-reflections-book-level"><span class="header-section-number">20.14</span> Exercises and Reflections (Book-Level)</h2>
+<ol type="1">
+<li><p><strong>Review the entire Living Architecture Loop across your own practice.</strong> Select a significant framework or structure you use—in your work, research, or personal life. Trace its evolution through several cycles of observation, structuring, use, evaluation, and revision. What patterns do you see? Where was revision most difficult? What enabled or prevented the loop from functioning? What would it take to strengthen your personal Living Architecture Loop?</p></li>
+<li><p><strong>Design a structural vitality assessment for an organization or community you belong to.</strong> What indicators would you use to assess whether the organization’s structures—its methodologies, models, governance systems—are alive or dead? How would you measure the health of its Living Architecture Loop? What interventions would you recommend if the assessment revealed structural stagnation?</p></li>
+<li><p><strong>Synthesize the book’s message in your own words.</strong> Write a one-page summary of the core argument of this book—not a chapter-by-chapter recap but an integrated statement of the central thesis. What is the most important idea you will take away? How will it change the way you approach structures in your own work and life? Share this summary with a colleague and discuss where you agree and disagree.</p></li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch17-long-term-refinement.html" class="pagination-link" aria-label="Chapter 17 — Long-Term Refinement">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Chapter 17 — Long-Term Refinement</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./summary.html" class="pagination-link" aria-label="Summary">
+        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
